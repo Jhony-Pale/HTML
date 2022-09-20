@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Ejercicio 3.8.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 3.8</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+        
+        <form method="post" autocomplete="on">
+            <p><label for="listaTexto">¿Qu&eacute; d&iacute;a es hoy?:
+                <input type="text" id="listaTexto"
+                placeholder="Selecciona un d&iacute;a" list="dias" />
+                <datalist id="dias">
+                    <option value="Lunes">
+                    <option value="Martes">
+                    <option value="Mi&eacute;rcoles">
+                    <option value="Jueves">
+                    <option value="Viernes">
+                    <option value="S&aacute;bado">
+                    <option value="Domingo">
+                </datalist>
+            </label></p>
+            <p>
+                <input type="submit" value="Enviar" />
+                <input type="reset" value="Borrar" />
+            </p>
+        </form>
+        
+    </body>
+</html>

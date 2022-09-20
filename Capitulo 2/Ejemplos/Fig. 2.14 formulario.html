@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Fig. 2.14 formulario.html -->
+<!-- Formulario con un campo de texto y campos ocultos -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <h1>Formulario de retroalimentaci&oacute;n</h1>
+        <p>Llene este formulario para ayudarnos
+        a mejorar nuestro sitio</p>
+
+        <!-- Esta etiqueta empieza el formulario, indica el -->
+        <!-- método de enviar información y la ubicación -->
+        <!-- de la secuencia de comandos de procesamiento del formulario -->
+        <form method="post" action="http://www.deitel.com">
+            <!-- las entradas ocultas contienen información -->
+            <!-- no visual que también se enviará -->
+            <input type="hidden" name = "destinatario"
+                value="deitel@deitel.com">
+            <input type="hidden" name="asunto"
+                value="Formulario de retroalimentaci&oacute;n">
+            <input type="hidden" name="redirigir"
+                value="Fig 2.1 principal.html">
+
+        <!-- <input type = "text" > inserta un campo de texto -->        
+        <p><label>Nombre
+            <input name="nombre" type="text" size="30"
+                maxlength="30">
+        </label></p>
+        <p>
+            <!-- Los tipos de entrada "submit" y "reset" insertan -->
+            <!-- botones para enviar y borrar contenido -->
+            <!-- del formulario, respectivamente -->
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </p>
+        </form>
+    </body>
+</html>

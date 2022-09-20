@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Fig. 2.13. Tabla2.html -->
+<!-- Tabla de HTML5 compleja. -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tablas</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <h1>Ejemplo de tabla: Combinado de filas y columnas</h1>
+        <table border="1">
+            <caption>Una tabla de muestra m&aacute;s compleja</caption>
+            <thead>
+                <!-- Los elementos rowspan y colspan combinan el número -->
+                <!-- especificado de celdas en sentido vertical u horizontal -->
+                <tr>
+                    <!-- Combina dos filas-->
+                    <th rowspan="2">
+                        <img src="camello.png" width="205"
+                        height="167" alt="Imagen de un camello con joroba">
+                    </th>
+
+                    <!-- Comnbina cuatro columnas -->
+                    <th colspan="4">
+                        <strong>Comparaci&oacute;n de cam&eacute;lidos</strong><br>
+                        Fecha aproximada: 10/2011
+                    </th>
+                </tr>
+                <tr>
+                    <th># jorobas</th>
+                    <th>Regi&oacute;n ind&iacute;gena</th>
+                    <th>Escupe?</th>
+                    <th>Produce lana?</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>Camellos (bactrianos)</th>
+                    <td>2</td>
+                    <td>Africa/Asia</td>
+                    <td>Si</td>
+                    <td>Si</td>
+                </tr>
+                <tr>
+                    <th>Llamas</th>
+                    <td>1</td>
+                    <td>Monta&ntilde;as de los Andes</td>
+                    <td>Si</td>
+                    <td>Si</td>
+                </tr>
+            </tbody>
+        </table>    
+    </body>
+</html>

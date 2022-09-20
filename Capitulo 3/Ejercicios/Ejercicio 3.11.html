@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- Ejercicio 3.11.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 3.11</title>
+    </head>
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+            <h2>3.2.1 input tipo color</h2>
+        </header>
+        <section id="1">
+            <article>
+                <p>
+                    El <b>tipo input color</b> (figura 3.1, l&iacute;neas 20 y 21) permite al usuario introducir un color. Al momento de escribir este libro, algunos navegadores despliegan el tipo <em>input</em> color como un campo de texto en donde el usuario puede introducir un c&oacute;digo hexadecimal o el nombre de un color. Hay dos navegadores, Chrome y Opera, que muestran un <em>selector de color</em> similar al cuadro de di&aacute;logo de colores de Microsoft Windows, que se muestra en la figura 3.2. En el futuro, cuando haga clic en un elemento <em>input</em> color, es muy probable que el resto de los navegadores muestren un <em>selector de color</em> tambi&eacute;n.
+                </p>
+                <hr>
+                <center>
+                    <img src="../Ejercicios/seleccion-colores.png" 
+                    alt="Selector de imagenes">
+                </center>
+                <hr>
+                <figcaption style="font-size: 18px;">
+                    <b>Figura 3.2</b> | Un di&aacute;logo para seleccionar colores.
+                </figcaption>
+            </article>
+        </section>
+
+        <section id="2">
+            <header>
+                <h4><em>El atributo autofocus</em></h4>
+            </header>
+
+            <article>
+                <p>
+                    El <b>articulo autofocus</b> (figura 3.1, l&iacute;nea 20) (un atributo opcional que puede usarse s&oacute;lo en un elemento <em>input</em> en un formulario) otorga de manera autom&aacute;tica el enfoque al elemento <em>input</em>, lo que permite al usuario empezar a escribir en ese elemento de inmediato. La figura 3.3 muestra el uso del elemento <em>autofocus</em> en el elemento color (el primer elemento <em>input</em> en nuestro formulario), como se despliega en Opera. No necesita incluir <em>autofocus</em> en sus formularios.
+                </p>
+                <hr>
+                <center>
+                    <img src="../Ejercicios/autofocus.png" 
+                    alt="Autofocus en el elemento color">
+                </center>
+                <hr>
+                <figcaption style="font-size: 18px;">
+                    <b>Figura 3.3</b> | Autofocus en el elemento input color cuando se usa el navegador Opera.
+                </figcaption>
+            </article>
+        </section>
+
+        <section id="3">
+            <header>
+                <h4><em>Validaci&oacute;n</em></h4>
+            </header>
+            <article>
+                <p style="text-align: justify;">
+                    Tradicionalmente ha sido dif&iacute;cil validar la entrada del usuario, como asegurar que se introduzca una direcci&oacute;n de correo electr&oacute;nico, URL, Fecha u hora en el formato adecuado. Los nuevos tipos <em>input</em> de HTML5 cuentan con <em>validaci&oacute;n autom&aacute;tica</em> del lado del cliente, con lo que se elimina la necesidad de agregar c&oacute;digo complicado de JavaScript a nuestras p&aacute;ginas Web para validar la entrada del usuario; as&iacute; se reduce la cantidad de datos inv&aacute;lidos que se env&iacute;an y, en consecuencia, disminuye el tr&aacute;fico de Internet entre el servidor y cliente que se usa para corregir las entradas inv&aacute;lidas. De <em>todas formas el servidor debe validar toda la entrada del usuario.</em>
+                </p>
+                <p style="margin-top: -10px;text-align: justify;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cuando un usuario introduce datos en un formulario y luego lo env&iacute;a (en este ejemplo al hacer clic en el bot&oacute;n <b>Enviar</b>), el navegador verifica de inmediato los elementos de validaci&oacute;n autom&aacute;tica para asegurar que los datos sean correctos. Por ejemplo, si un usuario introduce un valor de color hexadecimal incorrecto al usar un navegador que despliegue los elementos color como un campo de texto (por ejemplo, Internet Explorer), aparecer&aacute; una anotaci&oacute;n para se&ntilde;alar ese elemento e indicar que se introdujo un valor incorrecto (figura 3.4). La figura 3.5 lista cada uno de los nuevos tipos <em>input</em> de HTML5 y muestra ejemplos de los formatos correctos requeridos para que cada tipo de datos sea v&aacute;lido.
+                </p>
+                <hr>
+                <center>
+                    <img src="../Ejercicios/validacion.png" 
+                    alt="Valifaci&oacute;n de un elemento input color">
+                </center>
+                <hr>
+                <figcaption style="font-size: 18px;">
+                    <b>Figura 3.4</b> | Validaci&oacute;n de un elemento input color. (Actualmente ya no existe esta funcionalidad en Chrome).
+                </figcaption>
+                <br>
+                <center>
+                    <details>
+                        <summary>
+                            <b>Figura 3.5</b> | Tipos de input con validaci&oacute;n autom&aacute;tica.
+                        </summary>
+                        <br>
+                        <table style="border-collapse: collapse;text-align: left;" width="400px">
+                            <thead style="background-color: rgb(150, 150, 150);color: white;">
+                                <tr>
+                                    <th style="padding-top: 15px;padding-bottom: 15px;padding-left: 15px;padding-right: 15px;">tipo de input</th>
+                                    <th style="padding-top: 15px;padding-bottom: 15px;padding-left: 15px;padding-right: 15px;">Formato</th>
+                                </tr>
+                            </thead>
+                            <tbody style="background-color: rgb(238, 238, 238);">
+                                <tr>
+                                    <td style="padding-left: 15px;padding-top: 10px;">color</td>
+                                    <td style="padding-left: 15px;padding-top: 10px;">C&oacute;digo hexadecimal</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">Date</td>
+                                    <td style="padding-left: 15px;">aaaa-mm-dd</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">Datetime</td>
+                                    <td style="padding-left: 15px;">aaaa-mm-dd</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">datetime-local</td>
+                                    <td style="padding-left: 15px;">aaaa-mm-ddThh:mm</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">Month</td>
+                                    <td style="padding-left: 15px;">aaaa-mm</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">Number</td>
+                                    <td style="padding-left: 15px;">Cualquier valor n&uacute;merico</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">email</td>
+                                    <td style="padding-left: 15px;">nombre@dominio.com</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">url</td>
+                                    <td style="padding-left: 15px;">http://www.nombredominio.com</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">time</td>
+                                    <td style="padding-left: 15px;">hh:mm</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 15px;">week</td>
+                                    <td style="padding-left: 15px;">aaaa-Wnn</td>
+                                </tr>
+                            </tbody>
+                        </table>                    
+                    </details>
+                    
+                </center>             
+                <p style="text-align: justify;">
+                    Si desea pasar por alto la validaci&oacute;n, puede agregar el <b>atributo formnovalidate</b> al tipo <em>input submit</em> en la l&iacute;nea 101:
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>&lt;input type</b> = "<font style="color: rgb(90, 90, 90);">submit</font>" <b>value</b> = "<font style="color: rgb(90, 90, 90);">Enviar</font>" <b>formnovalidate</b> />
+                </p>
+            </article>
+        </section>
+    </body>
+</html>

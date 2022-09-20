@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Ejercicio 2.16.html-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 2.16</title>
+    </head>
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <form method="post" action="http://www.deitel.com">
+            <!-- las entradas ocultas contienen información -->
+            <!-- no visual que también se enviará -->
+            <input type="hidden" name = "destinatario"
+                value="deitel@deitel.com">
+            <input type="hidden" name="asunto"
+                value="Formulario de retroalimentaci&oacute;n">
+            <input type="hidden" name="redirigir"
+                value="Fig 2.1 principal.html">
+
+            <label>Nombre(s):<br>
+            <input type="text" name="Nombre"><br>
+            </label>
+
+            <p>
+                <label>Correo electr&oacute;nico:<br>
+                    <input type="email" placeholder="nombre@dominio.com"
+                    required /> 
+                </label>
+            </p>
+            <br>
+            <label>¿Qu&eacute; te gust&oacute; m&aacute;s del campus?<br>
+                <input type="checkbox" name="campus" value="campus">Campus<br>
+                <input type="checkbox" name="estudiantes" value="estudiantes">Estudiantes<br>
+                <input type="checkbox" name="ubicacion" value="ubicacion">Ubicaci&oacute;n<br>
+                <input type="checkbox" name="ambiente" value="ambiente">Ambiente<br>
+                <input type="checkbox" name="dormitorios" value="dormitorios">Dormitorios<br>
+                <input type="checkbox" name="deportes" value="deportes">Deportes<br>
+            </label>
+            <br>
+            <label>¿C&oacute;mo supiste sobre esta universidad?<br>
+                <input type="checkbox" name="amigos" value="amigos">Amigos<br>
+                <input type="checkbox" name="television" value="television">Televisi&oacute;n<br>
+                <input type="checkbox" name="internet" value="internet">Internet<br>
+                <input type="checkbox" name="otro" value="otro">Otro<br>
+            </label>
+
+            <p>Comentarios adicionales:</p>
+                <textarea name="message" rows="10" cols="30"></textarea>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
+            </p>
+        </form>
+    </body>
+</html>
