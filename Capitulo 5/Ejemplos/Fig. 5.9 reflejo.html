@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Fig. 5.9 reflejo.html -->
+<!-- Reflejos en CSS3. -->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reflejo</title>
+        <style type="text/css">
+            img { 
+                margin-top: 30px;
+                margin-right: 30px;}
+            img.below
+            {
+                -webkit-box-reflect: below 5px;
+                -webkit-gradient(
+                    linear, left top, left-bottom,
+                    from(transparent), to(white));
+            }
+            img.right
+            {
+                -webkit-box-reflect: right 5px;
+                -webkit-gradient(
+                    linear,right top, left top,
+                    from(transparent), to(white));
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+        </header>
+
+        <img class="below" src="java.jpg" width="138" height="180"
+            alt="Portada del libro Java How to program">
+        <img class="right" src="java.jpg" width="138" height="180"
+            alt="Portada del libro Java How to program">
+    </body>
+</html>

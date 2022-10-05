@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Ejercicio 5.11.html -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5.11</title>
+    <style type="text/css">
+        #portada
+        {
+            position: relative;
+            margin: 0 auto;
+        }
+        #portada img
+        {
+            position: absolute;
+            left: 0;
+        }
+        #portada:hover .p1{
+            opacity: 0;
+            -webkit-transition: opacity 3s linear;
+            transition: opacity 3s linear;
+        }
+        #portada:hover .p2{
+            opacity: 0;
+            -webkit-transition: opacity 3s linear 3s;
+            transition: opacity 3s linear 3s;
+        }
+        #portada:hover .p3{
+            opacity: 0;
+            -webkit-transition: opacity 3s linear 6s;
+            transition: opacity 3s linear 6s;
+        }
+        #portada:hover .p4{
+            opacity: 0;
+            -webkit-transition: opacity 3s linear 9s;
+            transition: opacity 3s linear 9s;
+        }
+        #portada:hover .p5{
+            opacity: 0;
+            -webkit-transition: opacity 3s linear 12s;
+            transition: opacity 3s linear 12s;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../index.html"><input type="button" value="Regresar"></a>
+        
+    <div id="portada">
+        <img class="p5" src="5.jpg" width="300" height="400" 
+            alt="Imagen 1">
+        <img class="p4" src="4.jpg" width="300" height="400"
+            alt="Portada de otro libro de Java">
+        <img class="p3" src="3.jpg" width="300" height="400"
+            alt="Portada de otro libro de Java">
+        <img class="p2" src="2.jpg" width="300" height="400"
+            alt="Portada de otro libro de Java">
+        <img class="p1" src="1.jpg" width="300" height="400"
+            alt="Portada de otro libro de Java">
+    </div>
+    
+</body>
+</html>

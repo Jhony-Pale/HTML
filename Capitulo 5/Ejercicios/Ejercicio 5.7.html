@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Ejercicio 5.4.html-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 5.7</title>
+        <style type="text/css">
+            div
+            {
+                width: 500px;
+                height: 500px;
+                border: 3px solid black;
+                padding: 5px 20px;
+                font-size: 30px;
+                margin-top: 30px;
+                text-align: center;
+                background: -webkit-gradient(
+                    linear, left top, right bottom,
+                    color-stop(5%, red), 
+                    color-stop(10%, orange),
+                    color-stop(15%, yellow),
+                    color-stop(20%, green),
+                    color-stop(5%, blue),
+                    color-stop(10%, indigo),
+                    color-stop(15%, violet));
+                background: -moz-linear-gradient(
+                    top left, red, orange, yellow,
+                              green, blue, indigo, violet);
+                background: linear-gradient(
+                    135deg, red, orange, yellow,
+                              green, blue, indigo, violet );
+                float: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <div id="diagonal"><h2>Gradiente lineal diagonal</h2></div>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Ejercicio 5.16.html -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5.16</title>
+    <style type="text/css">
+        p { margin: 0.9em 0em; }
+        .div1 { margin-left: 20px; margin-right: 20px; }
+
+        @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 480px) {
+            .div1 {
+                -webkit-column-count: 1;
+                column-count: 1;
+            }
+        }
+        
+        @media only screen and (min-width: 481px) and (max-width: 1024px) {
+            .div1 {
+                -webkit-column-count: 2;
+                column-count: 2;
+                -webkit-column-gap: 30px;
+                column-gap: 30px;
+                -webkit-column-rule: 1px outset black;
+                column-rule: 1px outset black;
+            }
+        }
+
+        @media only screen and (min-width: 1025px) {
+            .div1 {
+                -webkit-column-count: 3;
+                column-count: 3;
+                -webkit-column-gap: 30px;
+                column-gap: 30px;
+                -webkit-column-rule: 1px outset black;
+                column-rule: 1px outset black;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+        
+    </header>
+
+
+    <header>
+        <h1 style="margin-left: 20px;">Programaci&oacute;n en HTML5</h1>
+    </header>
+    <div class="div1">
+        <p>
+            En la actualidad las empresas demandan un gran n&uacute;mero de profesionales tecnol&oacute;gicos que sean expertos en lenguajes de programaci&oacute;n, 
+            con el objetivo de mejorar las estructuras de sus p&aacute;ginas web, y entre estos lenguajes el perfil de programaci&oacute;n en HTML5 es uno de los principales.
+        </p>
+        <p>
+            HTML es el lenguaje original de la web. Es un lenguaje usado para crear p&aacute;ginas webs, que determinan c&oacute;mo el contenido va a ser presentado en un navegador web. 
+            Es parte fundamental de las normas web, ya que este lenguaje es la base para construir p&aacute;ginas en internet.       
+         </p>
+        <p>
+            Las p&aacute;ginas web son instrumentos de difusi&oacute;n de informaci&oacute;n con diferentes fines. Sea cual sea el objetivo, todas tienen en com&uacute;n el lenguaje con el cual son construidas, el HTML.
+        </p>
+        <p>
+            Todo lo que ves en internet est&aacute; programado con un c&oacute;digo interno, y cuando accedes a una web, a tu navegador le llega este c&oacute;digo, y lo traduce de forma visual. 
+            Este c&oacute;digo es el que decide la estructura de una p&aacute;gina web, colocando sus diferentes elementos en los puntos correspondientes. 
+            A trav&eacute;s del lenguaje HTML se definen los p&aacute;rrafos, el texto, etc., es decir, se da forma y se estructura el contenido que aparece en las p&aacute;ginas.        </p>
+        <footer>
+            <em>&copy; 2021 por Grupo Conforsa. Todos los derechos reservados.</em>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Fig. 5.13 inclinar.html -->
+<!-- Elementos de inclinación y de transformación en CSS3. -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inclinar (skew)</title>
+        <style type="text/css">
+            .skew .textbox
+            {
+                margin-left: 75px;
+                background: lightgreen;
+                height: 100px;
+                width: 200px;
+                padding: 25px 0;
+                text-align: center;
+                font-size: 250%;
+                border: 3px solid darkgreen;
+                border-radius: 15px;
+                -webkit-animation: skew 3s infinite linear;
+                -moz-animation: skew 3s infinite linear;
+                animation: skew 3s infinite linear;
+            }
+            @-webkit-keyframes skew
+            {
+                from {-webkit-transform: skewX(0deg);}
+                25% {-webkit-transform: skewX(45deg);}
+                50% {-webkit-transform: skewX(0deg);}
+                75% {-webkit-transform: skewX(-45deg);}
+                to {-webkit-transform: skewX(0);}
+            }
+            @-moz-keyframes skew
+            {
+                from {-webkit-transform: skewX(0deg);}
+                25% {-webkit-transform: skewX(45deg);}
+                50% {-webkit-transform: skewX(0deg);}
+                75% {-webkit-transform: skewX(-45deg);}
+                to {-webkit-transform: skewX(0);}
+            }
+            @-keyframes skew
+            {
+                from {-webkit-transform: skewX(0deg);}
+                25% {-webkit-transform: skewX(45deg);}
+                50% {-webkit-transform: skewX(0deg);}
+                75% {-webkit-transform: skewX(-45deg);}
+                to {-webkit-transform: skewX(0);}
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+        
+        <div class="box skew">
+            <div class="textbox">Inclinar texto</div>
+        </div>
+    </body>
+</html>
