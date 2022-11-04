@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Ejercicio 6.23.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.23</title>
+    <script>
+        var PrimerNum; 
+        var SegundoNum;
+        var TercerNum;
+        var num1; 
+        var num2;
+        var num3;
+        var positivo = 0;
+        var negativo = 0;
+        var ceros = 0;
+        
+        PrimerNum = window.prompt("Ingresa el primer número: ");
+        SegundoNum = window.prompt("Ingresa el segundo número: ");
+        TercerNum = window.prompt("Ingresa el tercer número: ");
+
+        num1 = parseInt(PrimerNum);
+        num2 = parseInt(SegundoNum);
+        num3 = parseInt(TercerNum);
+
+        if (num1 > 0){
+            positivo = positivo + 1;
+        }
+        if (num1 < 0){
+            negativo = negativo + 1;
+        }
+        if (num1 == 0){
+            ceros = ceros + 1;
+        }
+        
+        if (num2 > 0){
+            positivo = positivo + 1;
+        }
+        if (num2 < 0){
+            negativo = negativo + 1;
+        }
+        if (num2 == 0){
+            ceros = ceros + 1;
+        }
+        
+        if (num3 > 0){
+            positivo = positivo + 1;
+        }
+        if (num3 < 0){
+            negativo = negativo + 1;
+        }
+        if (num3 == 0){
+            ceros = ceros + 1;
+        }
+
+        document.writeln("<h1>Números introducidos: "+ positivo + " positivo(s) || " + 
+            negativo + " negativo(s) || "+ ceros + " cero(s)</h1>");
+        
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

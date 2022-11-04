@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Ejercicio 6.20.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.20</title>
+    <script>
+        var PrimerNum; 
+        var SegundoNum; 
+        var TercerNum;
+        var CuartoNum;
+        var QuintoNum;
+        var num1; 
+        var num2;
+        var num3; 
+        var num4;
+        var num5;
+        var mayor;
+        var menor;
+
+        PrimerNum = window.prompt("Ingresa el primer número:");
+        SegundoNum = window.prompt("Ingresa el segundo número:");
+        TercerNum = window.prompt("Ingresa el tercer número:");
+        CuartoNum = window.prompt("Ingresa el cuarto número:");
+        QuintoNum = window.prompt("Ingresa el quinto número:");
+
+        num1 = parseInt(PrimerNum);
+        num2 = parseInt(SegundoNum);
+        num3 = parseInt(TercerNum);
+        num4 = parseInt(CuartoNum);
+        num5 = parseInt(QuintoNum);
+
+        menor = num1;
+        if (num2 < menor){
+            menor = num2;
+        }
+        if (num3 < menor){
+            menor = num3;
+        }
+        if (num4 < menor){
+            menor = num4
+        }
+        if (num5 < menor){
+            menor = num5
+        }
+
+        mayor = num1;
+        if (num2 > menor){
+            mayor = num2;
+        }
+        if (num3 > menor){
+            mayor = num3;
+        }
+        if (num4 > menor){
+            mayor = num4
+        }
+        if (num5 > menor){
+            mayor = num5
+        }
+
+        document.writeln("<h1>El número mayor es: "+ mayor +" y el número menor es: "+ menor + "</h1>");
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

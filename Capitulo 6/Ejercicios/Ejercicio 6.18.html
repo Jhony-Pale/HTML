@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Ejercicio 6.18.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.18</title>
+    <script>
+        var PrimerNum; 
+        var SegundoNum; 
+        var TercerNum;
+        var num1; 
+        var num2;
+        var num3; 
+        var suma; 
+        var multi;
+        var prom;
+        var mayor;
+        var menor;
+
+        PrimerNum = window.prompt("Ingresa el primer numero");
+        SegundoNum = window.prompt("Ingresa el segundo numero");
+        TercerNum = window.prompt("Ingresa el tercer numero");
+
+        num1 = parseInt(PrimerNum);
+        num2 = parseInt(SegundoNum);
+        num3 = parseInt(TercerNum);
+
+        suma = num1 + num2 + num3;
+        multi = num1 * num2 * num3;
+        prom = (num1 + num2 + num3) / 3;
+
+        if (num1 > num2 && num1 > num3){
+            if (num2 > num3){
+                mayor = num1;
+                menor = num3;
+            }
+        }
+
+        if (num2 > num1 && num2 > num3){
+            if (num1 > num3){
+                mayor = num2;
+                menor = num3;
+            }
+        }
+
+        if (num3 > num1 && num3 > num2){
+            if (num3 > num1){
+                mayor = num3;
+                menor = num1;
+            }
+        }
+
+        window.alert("La suma es "+ suma +", el prom es "+ prom + 
+            ", el producto es "+ multi+", el numero mayor es "+ mayor + ", el numero menor es " + menor);
+        
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

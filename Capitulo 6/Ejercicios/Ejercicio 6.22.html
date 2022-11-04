@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Ejercicio 6.22.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.22</title>
+    <script>
+        var PrimerNum; 
+        var SegundoNum;
+        var num1; 
+        var num2;
+        var menor;
+        var mayor; 
+        
+        PrimerNum = window.prompt("Ingresa el primer número");
+        SegundoNum = window.prompt("Ingresa el segundo número");
+    
+        num1 = parseInt(PrimerNum);
+        num2 = parseInt(SegundoNum);
+
+        mayor = num1;
+        menor = num2;
+
+        if (num2 > num1)
+        {
+            mayor = num2;
+            menor = num1;
+        }
+
+        if (0 == mayor % menor)
+        {
+            document.writeln("<h1>El número " + mayor + " es multiplo del número "+ menor + ".</h1>");
+        }
+
+        if (0 != mayor % menor)
+        {
+            document.writeln("<h1>Los números no son multiplos.</h1>");
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

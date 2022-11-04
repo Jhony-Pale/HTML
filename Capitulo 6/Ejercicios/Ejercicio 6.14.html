@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Ejercicio 6.14.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 6.14</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>6.14: Indique d orden de evaluaci&oacute;n de los operadores en cada una de las siguientes instrucciones de JavaScript, y muestre 
+            el valor de x despu&eacute;s de ejecutar cada instrucci&oacute;n.
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        x = 7 + 3 * 6 / 2 - 1;
+                    </strong><br>
+                    Respuesta: x = 15 <br>
+                    Primero se hace la multiplicacion,luego la division, despues la suma y finalmente la resta<br><br>
+                </li>
+                <li>
+                    <strong>
+                        x = 2 % 2 + 2 * 2 - 2 / 2;
+                    </strong><br>
+                    Respuesta: x = 4 <br>
+                    Primero la division y el quebrado, luego la multiplicacion.<br><br>
+                </li>
+                <li>
+                    <strong>
+                        x = (3 * 9 * (3 + (9 * 3 / (3) ) ) ) );
+                    </strong><br>
+                    Respuesta: x = 324 <br>
+                    Se inicia de dentro del par&eacute;ntesis, se hace primero la multiplicacion del segundo parentesis
+                    y el resultado se multiplica por el cuarto parentesis.<br><br>
+                </li>
+            </ol>
+        </p>
+    </body>
+</html>

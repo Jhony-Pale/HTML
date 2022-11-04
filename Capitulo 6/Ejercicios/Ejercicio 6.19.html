@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Ejercicio 6.19.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6.19</title>
+    <script>
+        var usradio; 
+        var radio;
+        var area;
+        var perimetro ;
+        var diametro;
+
+        usradio = window.prompt("Ingresa el radio del círculo");
+    
+        radio = parseInt(usradio);
+
+        diametro = (radio * 2);
+        perimetro = (3.1416 * diametro);
+        area = (3.1416 * (radio * radio));
+        
+        document.writeln("<h1>El di&aacute;metro es "+ diametro +", la circuferencia es "+ perimetro + 
+            " y el &aacute;rea es "+ area + "</h1>");
+        
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>
