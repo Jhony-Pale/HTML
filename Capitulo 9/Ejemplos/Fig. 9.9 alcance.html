@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Fig. 9.9 alcance.html -->
+<!-- Ejemplo de alcance. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de alcance</title>
+    <style type="text/css">
+        p       {margin: 0px;}
+        p.espacio {margin-top: 10px;}
+    </style>
+    <script>
+        var salida; //Almacena la cadena a mostrar
+        var x = 1; //Variable global
+
+        function iniciar()
+        {
+            var x = 5; //Variable local para la función iniciar
+            salida = "<p>la x local en iniciar es " + x + "</p>";
+
+            funcionA(); //funcionA tiene la x local
+            funcionB(); //funcionB usa la variable global x
+            funcionA(); //funcionA reinicializa la x local
+            funcionB(); //la variable global x retiene su valor
+
+            salida += "<p class='espacio'>la x local en iniciar es " + x +
+                "</p>";
+            document.getElementById( "resultados" ).innerHTML = salida;
+        } // Fin de la función iniciar
+
+        function funcionA()
+        {
+            var x = 25; //Se inicializa cada vez que se llama la funciónA
+
+            salida += "<p class = 'espacio'>la x local en la funcionA es " + x +
+                "despu&eacute;s de entrar a funcionA</p>";
+            ++x;
+            salida += "<p>la x local en funcionA es " + x +
+                " antes de salir de funcionA</p>";
+        }//Fin de funcionA
+
+        function funcionB()
+        {
+            salida += "<p class = 'espacio'>la variable global x es " + x +
+                " al entrar a la funcionB";
+            x *= 10;
+            salida += "<p>la variable local x es " + x +
+                " al salir de la funcionB</p>";
+        }//Fin de funcionB
+
+        window.addEventListener("load", iniciar, false );
+    </script>
+</head>
+<body onload="iniciar()">
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    <div id="resultados"></div>
+</body>
+</html>

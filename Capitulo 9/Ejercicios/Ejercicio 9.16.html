@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.16.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 9.16</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>9.16: Escriba segmentos de programa que realicen cada una de las siguientes tareas:
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        Calcule la parte entera del cociente cuando el entero a se divide entre el entero b.
+                    </strong><br>
+                    Instrucci&oacute;n: a = parseInt( a ); <br>
+                    b = parseInt( b ); <br>
+                    cociente = parseInt(a / b);<br><br>
+                </li>
+                <li>
+                    <strong>
+                        Calcule el residuo entero cuando el entero a se divide entre el entero b.
+                    </strong><br>
+                    Instrucci&oacute;n: a = parseInt( a ); <br>
+                    b = parseInt( b ); <br>
+                    residuo = parseInt(a % b);<br><br>
+                </li>
+                <li>
+                    <strong>
+                        Use las piezas de programa que se desarrollaron en las partes (a) y (b) 
+                        para escribir una funci&oacute;n llamada mostrarDigitos que reciba un entero entre 1 y 99999, 
+                        para luego imprimirlo como una serie de digitos, de los cuales cada par se separa mediante dos espacios. 
+                        Por ejemplo, el entero 4562 debería imprimirse como: 4  5  6  2.
+                    </strong><br>
+                    Instrucci&oacute;n: 
+                    <b>function</b> mostrarDigitos(numero){ <br>
+                        &emsp;&emsp;let numeroEntero = parseInt(numero); <br>
+                        &emsp;&emsp;let temp = 0, div = 1; <br>
+                        &emsp;&emsp;if(numeroEntero >= 1 && numeroEntero <= 99999){ <br> <br>
+
+                        &emsp;&emsp;&emsp;&emsp;for(let i = 1; i < numero.length; i++) div *= 10; <br><br>
+                        
+                        &emsp;&emsp;&emsp;&emsp;for(let i = 1; i <= numero.length; i++){ <br><br>
+                            
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if( i == 1 ){ <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;temp = parseInt(numeroEntero / div); <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;div /= 10; <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;} <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;else if(i == numero.length)  <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;temp = parseInt(numeroEntero % 10); <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;else{ <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;temp = parseInt((numeroEntero / div) % 10); <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;div /= 10; <br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;} <br> <br>
+                        
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;document.writeln(temp + "&emsp;&emsp;"); <br>
+                        &emsp;&emsp;&emsp;&emsp;} <br>
+                        &emsp;&emsp;} <br><br>
+                </li>
+                
+            </ol>
+        </p>
+    </body>
+</html>

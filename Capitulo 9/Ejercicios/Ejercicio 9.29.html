@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.29.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos 9.29</title>
+    <script>
+        let pot;
+
+        function iniciar(){
+            let boton = document.getElementById("calcular");
+            let Base = document.getElementById("Base");
+            let Exp = document.getElementById("Exp");
+            let res = document.getElementById("res");
+
+            boton.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            let baseS = parseInt(Base.value);
+            let expS = parseInt(Exp.value);
+            pot = 1;
+            if( expS > 0 ){
+                res.innerHTML = "" + baseS + "<sup>"+ expS +"</sup> = ";
+            
+                if(expS > 0){    
+                    for(let i = 1; i <= expS; i++ ){
+                        if(i != expS)
+                            res.innerHTML += "" + baseS + " * ";
+                        else
+                            res.innerHTML += "" + baseS + " = ";
+                    }
+                }
+                res.innerHTML += "" + potEntera(baseS, expS);
+            }
+            else
+                window.alert("Por favor, ingrese un exponente mayor a 0.");
+        }
+        
+        function potEntera( base, exponente ){
+            if(exponente == 0){
+                return 1;
+            }
+            else{
+                return base * potEntera(base, exponente - 1);
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+    <form action="#">
+        <input type="number" name="Base" id="Base" placeholder="Base">
+        <input type="number" name="Exponente" id="Exp" placeholder="Exp.">
+        <input type="button" value="Calcular exponente" id="calcular" onclick="iniciar">
+    </form>
+    <p id="res"></p>
+</body>
+</html>

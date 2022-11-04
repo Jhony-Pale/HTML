@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.21.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.21</title>
+    <script>
+        let rand, lado = "", cruz = 0, cara = 0;
+        
+        function iniciar(){
+            let boton = document.getElementById("lanzar");
+            let resultado = document.getElementById("resultado");
+            let imagen = document.getElementById("imagen");
+            let contador = document.getElementById("contador");
+
+            boton.addEventListener("click", lanzarMoneda, false);
+        }
+
+        function lanzarMoneda(){
+            rand = Math.floor(Math.random() * (2 - 1 + 1) + 1 );
+            
+            (rand == 1) ? lado = "Cara" : lado = "Cruz";
+            
+            (arrojar()) ? cara++ : cruz++;
+
+            resultado.innerHTML = "Obtuvo: " + lado + "";
+            imagen.setAttribute("src", ""+lado+".png");
+            imagen.setAttribute("alt", "Lado " + lado + " de la moneda.");
+            contador.innerHTML = "Número de caras obtenidas: " + cara + "<br>Número de cruz obtenidas: " + cruz;
+        }
+
+        function arrojar(){
+            return lado == "Cara";
+        }
+
+        window.addEventListener("load", iniciar, false);
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+
+    <input type="button" value="Lanzar" id="lanzar">
+            <p id="resultado"></p>
+            <img src="blanco.png" alt="Moneda" style="width: 200px; height: 200px;" id="imagen">
+            <p id="contador"></p>
+    
+</body>
+</html>

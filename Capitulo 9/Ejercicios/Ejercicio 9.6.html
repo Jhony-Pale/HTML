@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.6.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.6 - Volumen</title>
+    <script>
+        function iniciar()
+        {
+            var boton = document.getElementById( "botonCalcular" );
+            boton.addEventListener( "click", mostrarVolumen, false);
+        } //Find de la función iniciar
+
+        function mostrarVolumen()
+        {
+            var campoEntrada = document.getElementById( "campoRadio" );
+            var radio = parseFloat( campoEntrada.value );
+            var resultado = document.getElementById( "resultado");
+            resultado.innerHTML = "El volumen de la esfera es: " + volumenEsfera( radio );
+        } //Fin de la función mostrar volumen
+
+        function volumenEsfera( radio )
+        {
+            return (4.0 / 3.0 ) * Math.PI * Math.pow( radio, 3);
+        }// Fin de la función volumenEsfera
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+    <a href="../../index.html"><input type="button" value="Regresar"></a>
+    <form action="#">
+        <p><label>Radio:
+            <input id="campoRadio" type="number"></label>
+            <input id="botonCalcular" type="button" value="Calcular"></p>
+    </form>
+    <p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.23.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.23</title>
+    <script>
+        var NumeroGenerado1;
+        var NumeroGenerado2;
+
+       function generar(){
+           NumeroGenerado1=Math.floor(1+Math.random()*10);
+           NumeroGenerado2=Math.floor(1+Math.random()*10);
+        } 
+           
+
+        function escucha(){
+            var boton1=document.getElementById("botonC");
+            boton1.addEventListener("click",verifica,false);
+        }
+
+        function verifica(){
+            var cambios=["Muy bien","Excelente","Buen trabajo","Sigue así"];
+            var cambios2=["No, intente de nuevo","Equivocado. Trate una vez más","No se dé por vencido","No. Siga intentando"];
+            var animo=Math.floor(Math.random()*cambios.length);
+            var intento=Math.floor(Math.random()*cambios2.length);
+            var respuesta=NumeroGenerado1*NumeroGenerado2;
+            var Entrada=document.getElementById("Entrada");
+            Entrada=parseInt(Entrada.value);
+            console.log(Entrada!=respuesta);
+            if(Entrada!=respuesta){
+                document.getElementById("Pregunta").innerHTML =cambios2[intento]+"<br>¿Cuánto es "+NumeroGenerado1+" x "+NumeroGenerado2+"?";
+                document.getElementById("ver").innerHTML ="";
+                return false;
+            }
+            document.getElementById("ver").innerHTML =cambios[animo];
+            Pregunta();
+        }
+
+
+        function Pregunta(){
+            generar();
+            document.getElementById("Pregunta").innerHTML ="&nbsp;&nbsp;¿Cuánto es "+NumeroGenerado1+" por "+NumeroGenerado2+"?";
+            limipar();
+        }
+
+        function limipar(){
+            var objet=document.getElementById("Entrada");
+            objet.value="";
+            objet.focus();
+        }
+
+        window.addEventListener("load",escucha,false);
+
+    </script>
+</head>
+<body onload="Pregunta()">
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+    <form action="#">
+        <div>
+            <p id="ver"></p> 
+            <p id="Pregunta"></p>
+            </div>                
+            <input id="Entrada" type="number" placeholder="Respuesta" >
+            <p>
+            <input id="botonC" type="button" value="Validar">
+            </p>
+        </form>
+</body>
+</html>

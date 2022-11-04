@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.7.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.7</title>
+    <script>
+
+        function iniciar(){
+            let boton = document.getElementById("botonCalcular");
+            let Radio = document.getElementById("Radio");
+            let resultado = document.getElementById("resultado");
+
+            boton.addEventListener("click", areaCirculo, false);
+        }
+
+        function areaCirculo(){
+            let area = Math.PI * Math.pow(parseFloat(Radio.value), 2);
+
+            resultado.innerHTML = "El área es: " + area;
+        }
+
+        window.addEventListener("load", iniciar, false);
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+
+    <form action="#">
+        <input type="number" name="Radio" id="Radio">
+        <input type="button" value="Calcular área" id="botonCalcular">
+    </form>
+    <p id="resultado"></p>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.20.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.20</title>
+    <script>
+        function iniciar(){
+            let calculo = document.getElementById("calcular");
+            let campoC = document.getElementById("campoC");
+            let res = document.getElementById("res");
+
+            calculo.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            let promedio = parseInt(campoC.value);
+            puntosCalidad(promedio);
+        }
+
+        function puntosCalidad(pro){
+            switch(true){
+                case pro >= 90 && pro <= 100:
+                    res.innerHTML = "Nivel de calidad: 4";
+                    break;
+                case pro >= 80 && pro <= 89:
+                    res.innerHTML = "Nivel de calidad: 3";
+                    break;
+                case pro >= 70 && pro <= 79:
+                    res.innerHTML = "Nivel de calidad: 2";
+                    break;
+                case pro >= 60 && pro <= 69:
+                    res.innerHTML = "Nivel de calidad: 1";
+                    break;
+                case pro >= 0 && pro < 60:
+                    res.innerHTML = "Nivel de calidad: 0";
+                    break;
+                default:
+                    window.alert("Ingrese una calificación válida (1 - 100).");
+                    break;
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+    <form action="#">
+        <input type="number" name="Calificacion" id="campoC">
+        <input type="button" value="Calidad" id="calcular">
+    </form>
+    <p id="res"></p>
+    
+</body>
+</html>

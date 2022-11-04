@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.17.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.17</title>
+
+    <style type="text/css">
+        input[type=number] { width: 60px; }
+    </style>
+    
+    <script>
+        
+        function inicar(){
+            let botonC = document.getElementById("calcularC");
+            let botonF = document.getElementById("calcularF");
+            let campoC = document.getElementById("campoC");
+            let campoF = document.getElementById("campoF");
+            let res = document.getElementById("res");
+
+            botonC.addEventListener("click", mostrarC, false);
+            botonF.addEventListener("click", mostrarF, false);
+        }
+
+        function mostrarC(){
+            let fahrenheit = parseFloat(campoF.value);
+
+            res.innerHTML = "ºCelsius = " + Celsius(fahrenheit).toFixed(4);
+
+        }
+        function mostrarF(){
+            let celsius = parseFloat(campoC.value);
+
+            res.innerHTML = "ºFahrenheit = " + Fahrenheit(celsius).toFixed(4);
+
+        }
+
+        function Celsius(F){
+            return (5.0 / 9.0) * (F - 32);
+        }
+
+        function Fahrenheit(C){
+            return (9.0 / 5.0) * (C + 32);
+        }
+
+        window.addEventListener("load", inicar, false);
+    </script>
+</head>
+<body>
+        <header>
+            <a href="../../index.html"><input type="button" value="Regresar"></a>
+        </header>
+        <li>
+            <form action="#">
+                <label for="Fahrenheit">Fahrenheit</label>
+                <input type="number" name="Fahrenheit" id="campoF">
+                <input type="button" value="Convertir a Celsius" id="calcularC">
+
+                <label for="Celsius">Celsius</label>
+                <input type="number" name="Celsius" id="campoC">
+                <input type="button" value="Convertir a Fahrenheit" id="calcularF">
+                
+            </form>
+        </li>
+        <p class="respuesta" id="res">
+        </p>
+</body>
+</html>

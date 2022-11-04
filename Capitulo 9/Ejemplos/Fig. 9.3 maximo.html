@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Fig. 9.3 maximo.html -->
+<!-- Función máximo definida por el programador. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&aacute;ximo de tres valores</title>
+    <style type="text/css">
+        p { margin: 0;}
+    </style>
+    <script>
+        
+        var entrada1 = window.prompt( "Escriba el primer número" , "0");
+        var entrada2 = window.prompt( "Escriba el segundo número" , "0");
+        var entrada3 = window.prompt( "Escriba el tercer número" , "0");
+
+        var valor1 = parseFloat( entrada1 );
+        var valor2 = parseFloat( entrada2 );
+        var valor3 = parseFloat( entrada3 );
+
+        var valorMax = maximo( valor1, valor2, valor3 );
+
+        document.writeln( "<p>Primer n&uacute;mero: " + valor1 + "</p>" +
+        "<p>Segundo n&uacute;mero: " + valor2 + "</p>" +
+        "<p>Tercer n&uacute;mero: " + valor3 + "</p>" +
+        "<p>El m&aacute;ximo es: " + valorMax + "</p>");
+
+        // Definición de la función máximo (se llama desde la linea 23) 
+        function maximo( x, y, z)
+        {
+            return Math.max( x, Math.max( y,z));
+        } //Fin de la función máximo
+        
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

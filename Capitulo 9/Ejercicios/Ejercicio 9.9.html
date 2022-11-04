@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.9.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.9</title>
+    <style type="text/css">
+        input[type=number] { width: 50px; }
+    </style>
+    
+    <script>
+
+        function iniciar(){
+            let boton = document.getElementById("calcular");
+            
+            let campox1 = document.getElementById("campox1");
+            let campoy1 = document.getElementById("campoy1");
+            
+            let campox2 = document.getElementById("campox2");
+            let campoy2 = document.getElementById("campoy2");
+
+            let resultado = document.getElementById("resultado");
+
+            
+
+            boton.addEventListener("click", distancia, false);
+        }
+
+        function distancia(){
+            let x1 = parseFloat(campox1.value);
+            let y1 = parseFloat(campoy1.value);
+            
+            let x2 = parseFloat(campox2.value);
+            let y2 = parseFloat(campoy2.value);
+
+            let powX = Math.pow((x2 - x1), 2);
+            let powY = Math.pow((y2 - y1), 2);
+            
+            let hipotenusa = Math.sqrt(powX + powY);
+
+            resultado.innerHTML = "La distancia es: " + hipotenusa + " unidades.";
+
+        }
+
+        window.addEventListener("load", iniciar, false);
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+
+    <div class="boxContent">
+        <form action="#">
+            <label for="x1">x<sub>1</sub></label>
+            <input type="number" name="x1" id="campox1"> <br>
+            
+            <label for="y1">y<sub>1</sub></label>
+            <input type="number" name="y1" id="campoy1"> <br>
+            
+            <label for="x2">x<sub>2</sub></label>
+            <input type="number" name="x2" id="campox2"> <br>
+            
+            <label for="y2">y<sub>2</sub></label> 
+            <input type="number" name="y2" id="campoy2"> <br><br>
+
+            <input type="button" value="Calcular distancia" id="calcular">
+        </form>
+
+        <p id="resultado"></p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.22.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.22</title>
+</style>
+<script>
+    var NumGenerado1;
+    var NumGenerado2
+
+   function generar(){
+       NumGenerado1=Math.floor(1+Math.random()*10);
+       NumGenerado2=Math.floor(1+Math.random()*10);
+    } 
+       
+
+    function escucha(){
+        var boton1=document.getElementById("botonC");
+        boton1.addEventListener("click",verifica,false);
+    }
+
+    function verifica(){
+        var respuesta=NumGenerado1*NumGenerado2
+        var Entrada=document.getElementById("Entrada");
+        Entrada=parseInt(Entrada.value);
+        console.log(Entrada!=respuesta);
+        if(Entrada!=respuesta){
+            document.getElementById("Pregunta").innerHTML ="Error, intenta de nuevo<br>¿Cuánto es "+NumGenerado1+" x "+NumGenerado2+"?";
+            document.getElementById("ver").innerHTML ="";
+            return false;
+        }
+        document.getElementById("ver").innerHTML ="¡Bien hecho!";
+        Pregunta();
+    }
+
+
+    function Pregunta(){
+        generar();
+        document.getElementById("Pregunta").innerHTML ="&nbsp;&nbsp;¿Cuánto es "+NumGenerado1+" por "+NumGenerado2+"?";
+    }
+
+    window.addEventListener("load",escucha,false);
+
+</script>
+</head>
+<body onload="Pregunta()">
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    <form action="#">
+            <div>
+                <p id="ver"></p> 
+                <p id="Pregunta"></p>
+            </div>
+                
+            <input id="Entrada" type="number" placeholder="Respuesta">
+            <p>
+            <input id="botonC" type="button" value="Verificar">
+            </p>
+        </form>
+
+</body>
+</html>

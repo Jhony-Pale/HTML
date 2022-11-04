@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.24.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.24</title>
+    <script>
+        let Num = [], resp, aciertos = 0, inc = 0, contador = 0, primera = true;
+        let boton, botonR;
+
+        function iniciar(){
+            boton = document.getElementById("botonResponder");
+            botonR = document.getElementById("botonReiniciar");
+            let campoRes = document.getElementById("campoRes");
+            let mensajeR = document.getElementById("mensajeR");
+            let preguntaTexto = document.getElementById("preguntaTexto");
+            let correctos = document.getElementById("correctos");
+            let incorrectos = document.getElementById("incorrectos");
+            let mensajeFinal = document.getElementById("mensajeFinal");
+            
+            validar();
+
+            boton.addEventListener("click", validar, false);
+            botonR.addEventListener("click", reinicar, false);
+            
+        }
+
+        function reinicar(){
+            boton.disabled = false;
+            botonR.disabled = true;
+            aciertos = 0;
+            inc = 0;
+            contador = 0;
+            mensajeFinal.innerHTML = "";
+            mensajeR.innerHTML = "";
+            correctos.innerHTML = "Número de respuestas correctas: " + aciertos;
+            incorrectos.innerHTML = "Número de espuestas incorrectas: " + inc;
+            campoRes.value = "";
+            generar();
+        }
+
+        function validar(){
+            if(primera)
+                generar();
+            else if(contador == 10){
+                if(10 * aciertos < 75 || aciertos == 0){
+                    mensajeFinal.innerHTML = "Ha respondido 10 preguntas. <br>Se recomienta que pida ayuda a su instructor.";
+                    campoRes.value = "";
+                    boton.disabled = true;
+                    botonR.disabled = false;
+                }else{
+                    mensajeFinal.innerHTML = "Ha obtenido un buen puntaje.";
+                    campoRes.value = "";
+                    boton.disabled = true;
+                    botonR.disabled = false;
+                }
+                
+            }
+            else{
+                if(parseFloat(resp).toFixed(2) == parseFloat(campoRes.value).toFixed(2)){
+                    mensajeR.innerHTML = respCorrectas();
+                    aciertos++;
+                    contador++;
+                    correctos.innerHTML = "Respuestas correctas: " + aciertos;
+                    campoRes.value = "";
+                    generar();
+                }else{ 
+                    mensajeR.innerHTML = respIncorrectas();
+                    inc++;
+                    contador++;
+                    incorrectos.innerHTML = "Respuestas incorrectas: " + inc;
+                    campoRes.value = "";
+                    generar();
+                }
+            }
+        }
+
+        function respCorrectas(){
+            let selec = Math.floor(Math.random() * (4 - 1 + 1) + 1 );
+            switch(selec){
+                case 1:
+                    return "Muy bien.";
+                case 2:
+                    return "Excelente.";
+                case 3:
+                    return "Buen trabajo.";
+                case 4:
+                    return "Siga así.";
+            }
+        }
+        function respIncorrectas(){
+            let selec = Math.floor(Math.random() * (4 - 1 + 1) + 1 );
+            switch(selec){
+                case 1:
+                    return "No. Intente de nuevo.";
+                case 2:
+                    return "Equivocado. Trate una vez más.";
+                case 3:
+                    return "No se dé provencido.";
+                case 4:
+                    return "No. Siga intentando.";
+            }
+        }
+
+        function generar(){
+            Num.shift();
+            Num.shift();
+            Num.shift();
+            Num.push(Math.floor(Math.random() * (9 - 1 + 1) + 1 )); //primer número
+            Num.push(Math.floor(Math.random() * (9 - 1 + 1) + 1 )); //segundo número
+            Num.push(Math.floor(Math.random() * (4 - 1 + 1) + 1 )); //pregunta
+
+            switch(Num[2]){
+                case 1://pregunta de suma
+                    //document.writeln("Pregunta 1");
+                    preguntaTexto.innerHTML = "¿Cuánto es " + Num[0] + " más " + Num[1] + "?";
+                    resp = Num[0] + Num[1];
+                    break;
+                case 2://pregunta de resta
+                    //document.writeln("Pregunta 2");
+                    preguntaTexto.innerHTML = "¿Cuánto es " + Num[0] + " menos " + Num[1] + "?";
+                    resp = Num[0] - Num[1];
+                    break;
+                case 3://pregunta de producto
+                    //document.writeln("Pregunta 3");
+                    preguntaTexto.innerHTML = "¿Cuánto es " + Num[0] + " por " + Num[1] + "?";
+                    resp = Num[0] * Num[1];
+                    break;
+                case 4://pregunta de división
+                    //document.writeln("Pregunta 4");
+                    preguntaTexto.innerHTML = "¿Cuánto es " + Num[0] + " entre " + Num[1] + "?";
+                    resp = Num[0] / Num[1];
+                    break;
+            }
+            primera = false;
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body onload="Pregunta()">
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+    <form action="#">
+        <p id="preguntaTexto"></p>
+        
+        <input type="number" name="Respuesta" id="campoRes">
+        <input type="button" value="Responder" id="botonResponder">
+        
+        
+    </form>
+    <p id="mensajeR"></p>
+
+    <p id="correctos">Respuestas correctas: 0</p>
+    <p id="incorrectos">Respuestas incorrectas: 0</p>
+
+    <h3 id="mensajeFinal"></h3>
+    <input type="button" value="Reiniciar Formulario" id="botonReiniciar" disabled>
+</body>
+</html>

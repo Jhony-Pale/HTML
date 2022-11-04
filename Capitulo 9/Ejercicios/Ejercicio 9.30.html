@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.30.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 9.30</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>9.30: ¿Qu&eacute; hace la siguiente funci&oacute;n?
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        // El parámetro b debe ser entero <br>
+                        // positivo para evitar recursividad infinita <br>
+                        <b>function</b> misterio( a, b ) <br>
+                        { <br>
+                        &emsp;<b>if</b> ( b == 1 ) <br>
+                        &emsp;&emsp;<b>return</b> a; <br>
+                        &emsp;<b>else</b> <br>
+                        &emsp;&emsp;<b>return</b> a + misterio(a, b - 1); <br>
+                        } <br><br>
+                    </strong><br>
+                    Respuesta: Regresa a * b, o sea,  
+                    la suma de a un total de b cantidad de veces.<br><br>
+                </li>
+            </ol>
+        </p>
+    </body>
+</html>

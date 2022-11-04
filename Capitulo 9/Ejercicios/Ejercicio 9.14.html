@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.14.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.14</title>
+    <style type="text/css">
+        input[type=number] { width: 80px; }
+    </style>
+
+    <script>
+        function iniciar(){
+            let boton = document.getElementById("calcular");
+            let Num1 = document.getElementById("Num1");
+            let Num2 = document.getElementById("Num2");
+            let res = document.getElementById("res");
+
+            boton.addEventListener("click", mostrar, false);
+        }
+
+        function mostrar(){
+            let num1 = parseInt(Num1.value);
+            let num2 = parseInt(Num2.value);
+            
+            (multiplo(num1, num2)) ? 
+                res.innerHTML = num2 + " es múltiplo de " + num1 :
+                res.innerHTML = num2 + " no es múltiplo de " + num1;
+        }
+
+        function multiplo(num_1, num_2){
+            return num_2 % num_1 == 0 ? true : false;
+        }
+
+        window.addEventListener("load", iniciar, false);
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+        <form action="#">
+            <input type="number" name="Primer numero" id="Num1" placeholder="Primero">
+            <input type="number" name="Segundo numero" id="Num2" placeholder="Segundo">
+            <input type="button" value="Calcular" id="calcular">
+        </form>
+        <p id="res"></p>
+</body>
+</html>

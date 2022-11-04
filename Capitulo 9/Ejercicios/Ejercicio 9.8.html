@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.8.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.8</title>
+    <script>
+
+        function iniciar(){
+            let boton = document.getElementById("calcular");
+            let Horas = document.getElementById("Horas");
+            let res = document.getElementById("res");
+            let res2 = document.getElementById("res2");
+
+            boton.addEventListener("click", validarHoras, false);
+        }
+
+        function validarHoras(){
+            let horas = parseFloat(Horas.value);
+            if(horas <= 0 || horas > 24 || isNaN(horas))
+                window.alert("Ingrese una cantidad de horas válida (1 - 24 hrs)");
+            else
+                calcularCargos(horas);
+            
+        }
+
+        let total = 0;
+
+        function calcularCargos(hrs){
+            let cargo_cliente = 0;
+
+            switch (true) {
+                case hrs <= 3:
+                    cargo_cliente = 2;
+                    break;
+                case hrs >= 24:
+                    cargo_cliente = 10;
+                    break;
+                case hrs > 3 && hrs < 24: 
+                    if(Number.isInteger(hrs))
+                        cargo_cliente = ((parseInt(hrs) - 3) * 0.5) + 2; 
+                    else
+                        cargo_cliente = ((parseInt(hrs) - 3) * 0.5) + 2.5;
+                    break;
+            }
+
+            total += cargo_cliente;
+            
+            mostrar(cargo_cliente, hrs, total);
+        }
+
+        function mostrar(cargoC, hrs_c, t){
+            res.innerText += "El cargo del cliente tomando [" + hrs_c +" hrs.] es: $" + cargoC + "\n";
+            res2.innerText = "El total es: " + t;
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+
+    <form action="#">
+        <input type="number" name="Horas" id="Horas" placeholder="Hrs" style="width: 50px;">
+        <input type="button" value="Calcular cargo" id="calcular">
+    </form>
+    <p id="res"></p>
+    <p id="res2"></p>
+</body>
+</html>

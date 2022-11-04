@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.18.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.18</title>
+    <style>
+        input[type=number] { width: 60px; }
+    </style>
+
+    <script>
+        function iniciar(){
+            let boton = document.getElementById("calcular");
+            let Num1 = document.getElementById("Num1");
+            let Num2 = document.getElementById("Num2");
+            let Num3 = document.getElementById("Num3");
+            let res = document.getElementById("res");
+
+            boton.addEventListener("click", mostrar, false);
+        }
+
+        function mostrar(){
+            res.innerHTML = "El número menor es: " + minimo3();
+        }
+
+        function minimo3(){
+            let num_1 = parseFloat(Num1.value);
+            let num_2 = parseFloat(Num2.value);
+            let num_3 = parseFloat(Num3.value);
+
+            return Math.min(num_1, num_2, num_3);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    <form action="#">
+        <input type="number" name="Primero" id="Num1">
+        <input type="number" name="Segundo" id="Num2">
+        <input type="number" name="Tercero" id="Num3">
+
+        <input type="button" value="Buscar mínimo" id="calcular">
+    </form>
+    <p id="res"></p>
+</body>
+</html>

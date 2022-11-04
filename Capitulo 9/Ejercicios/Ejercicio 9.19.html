@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.19.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.19</title>
+    <style>
+        textarea{
+            font-size: 20pt;
+            color: red;
+            width: 70%;
+        }
+    </style>
+    <script>
+        function escucha(){
+            var b1=document.getElementById("b1");
+            b1.addEventListener("click",NumPrimo,false);
+            var boton2=document.getElementById("boton2");
+            boton2.addEventListener("click",Calcular,false);
+        }
+
+        function NumPrimo(){
+            var Numero1=window.prompt("Ingresa un número");
+            Numero1=parseInt(Numero1);
+            var Primo=true;
+            if(Numero1>1){
+                for(let i=2; i<Numero1; i++){
+                    if(Numero1%Numero1==0 && Numero1%i==0){
+                        Primo=false;
+                        break;
+                    }
+                }
+            }else{
+                Primo=false;
+            }
+            console.log(Primo + "" + Numero1);
+            if(Primo){
+                window.alert("Es número primo");
+            }else{
+                window.alert("No es número primo");
+            }
+        }
+
+        function Calcular(){
+            var num=3; var 
+            texto=document.getElementById("AreaT");
+            Primo=true;
+            
+            while(num<=10000){
+
+                for(let i=2; i<num; ++i){
+                    if(num%i==0){
+                        Primo=false;
+                        break;
+                    }
+                }
+
+                if(Primo){
+                    texto.value+=num+", ";
+                    console.log(num);
+                }
+                Primo = true;
+                num++; 
+                
+            }
+        }
+
+        window.addEventListener("load",escucha,false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+
+    <form action="#">
+        <p>A continuaci&oacute;n se muestran los n&uacute;meros primos del 1 al 10000</p>
+        <p>
+            <textarea name="result" id="AreaT" cols="30" rows="10" disabled="true"></textarea>
+        </p>
+        <p><input id="b1" type="button" value="Validar si un número es primo">
+            <input id="boton2" type="button" value="Mostrar números primos">
+        </p>
+    </form>
+    
+</body>
+</html>

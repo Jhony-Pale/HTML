@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.26.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.26</title>
+    <script>
+        let Adivinar, Reiniciar, NumAleatorio, NumInt = 1;
+
+        function iniciar(){
+            Adivinar = document.getElementById("adivinar");
+            Reiniciar = document.getElementById("reiniciar");
+            let campoNumero = document.getElementById("campoNumero");
+            let mensajeFinal = document.getElementById("mensajeFinal");
+            let mensajeSuerte = document.getElementById("mensajeSuerte");
+
+            generarNumero();
+
+            Adivinar.addEventListener("click", validar, false);
+            Reiniciar.addEventListener("click", reload, false);
+        }
+
+        function reload(){
+            Adivinar.disabled = false;
+            Reiniciar.disabled = true;
+            campoNumero.value = "";
+            mensajeFinal.innerHTML = "";
+            NumInt = 0;
+            mensajeSuerte.innerHTML = "";
+            generarNumero();
+        }
+
+        function generarNumero(){
+            NumAleatorio = Math.floor(Math.random() * (1000 - 1 + 1) + 1 );
+            console.log(NumAleatorio);
+        }
+        function validar(){
+            let numero_usuario = parseInt(campoNumero.value);
+            switch(true){
+                case numero_usuario == NumAleatorio:
+                    mensajeFinal.innerHTML = "Felicidades. ¡Adivinó el número!";
+                    Adivinar.disabled = true;
+                    Reiniciar.disabled = false;
+                    mostrarNumInt();
+                    break;
+                case numero_usuario < NumAleatorio:
+                    mensajeFinal.innerHTML = "Demasiado bajo, por favor intente de nuevo.";
+                    campoNumero.value = "";
+                    NumInt++;
+                    break;
+                case numero_usuario > NumAleatorio:
+                    mensajeFinal.innerHTML = "Demasiado alto, por favor intente de nuevo.";
+                    campoNumero.value = "";
+                    NumInt++;
+                    break;
+                default:
+                    mensajeFinal.innerHTML = "Introduzca un valor válido.";
+                    campoNumero.value = "";
+                    break;
+            }
+        }
+
+        function mostrarNumInt(){
+            switch(true){
+                case NumInt < 10:
+                    mensajeSuerte.innerHTML = "¡Conoce el secreto o tuvo suerte!";
+                    break;
+                case NumInt == 10:
+                    mensajeSuerte.innerHTML = "¡Entonces si conoce el secreto!";
+                    break;
+                case NumInt > 10:
+                    mensajeSuerte.innerHTML = "¡Debería poder hacerlo mejor!";
+                    break;
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+    <p>Adivine un número entre 1 y 1000:</p>
+            <form action="#">
+                <input type="number" name="Número" id="campoNumero">
+                <input type="button" value="Adivinar" id="adivinar">
+                <input type="button" value="Reiniciar" id="reiniciar" disabled>
+            </form>
+            <p id="mensajeFinal"></p>
+            <h2 id="mensajeSuerte"></h2>
+    
+</body>
+</html>
