@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.9.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.9</title>
+    <script>
+        var num, contador=1;
+
+        while(contador<=5){
+            num=window.prompt("Ingresa un número: ");
+            num=parseInt(num);
+
+            document.write("<h2>");
+
+            for(let i=0; i<num; i++){
+                document.write("*");
+            }
+            document.write("</h2>");
+            ++contador;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.14.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.14</title>
+    <script>
+        var cNormal = 40;
+        var cMedia = 45;
+        var hTrabajadas1, hTrabajadasUsuario1;
+        var hTrabajadas2, hTrabajadasUsuario2;
+        var hTrabajadas3, hTrabajadasUsuario3;
+        var tarifaHora1, tarifaPorHoraUsuario1;
+        var tarifaHora2, tarifaPorHoraUsuario2;
+        var tarifaHora3, tarifaPorHoraUsuario3;
+        var sbruto1, sbruto2, sbruto3;
+
+        hTrabajadasUsuario1 = window.prompt("Ingrese las horas trabajadas del empleado 1: " );
+        hTrabajadas1 = parseInt(hTrabajadasUsuario1);
+
+        tarifaPorHoraUsuario1 = window.prompt("Ingrese la tarifa por hora del empleado 1: ");
+        tarifaHora1 = parseInt(tarifaPorHoraUsuario1);
+
+        hTrabajadasUsuario2 = window.prompt("Ingrese las horas trabajadas del empleado 2: " );
+        hTrabajadas2 = parseInt(hTrabajadasUsuario2);
+
+        tarifaPorHoraUsuario2 = window.prompt("Ingrese la tarifa por hora del empleado 2: ");
+        tarifaHora2 = parseInt(tarifaPorHoraUsuario2);
+
+        hTrabajadasUsuario3 = window.prompt("Ingrese las horas trabajadas del empleado 3: " );
+        hTrabajadas3 = parseInt(hTrabajadasUsuario3);
+
+        tarifaPorHoraUsuario3 = window.prompt("Ingrese la tarifa por hora del empleado 3: ");
+        tarifaHora3 = parseInt(tarifaPorHoraUsuario3);
+
+        sbruto1 = hTrabajadas1 * tarifaHora1;
+        sbruto2 = hTrabajadas2 * tarifaHora2;
+        sbruto3 = hTrabajadas3 * tarifaHora3;
+
+        if (hTrabajadas1 < 40){
+            document.writeln("<p>Empleado 1, no alcanza la cuota normal</p>");
+        }
+
+        if (hTrabajadas1 == cNormal){
+            document.writeln("<p>Empleado 1, tiene la cuota normal</p>");
+        }
+      
+        if (hTrabajadas1 >= cMedia){
+            document.writeln("<p>Empleado 1, tiene la cuota y media</p>");
+        }
+        
+        document.writeln("Su sueldo bruto es de: " + sbruto1);
+
+        
+        if (hTrabajadas2 < 40){
+            document.writeln("<p>Empleado 2, no alcanza la cuota normal</p>");
+        }
+
+        if (hTrabajadas2 == cNormal){
+            document.writeln("<p>Empleado 2, tiene la cuota normal</p>");
+        }
+      
+        if (hTrabajadas2 >= cMedia){
+            document.writeln("<p>Empleado 2, tiene la cuota y media</p>");
+        }
+        
+        document.writeln("Su sueldo bruto es de: " + sbruto2);
+
+
+        if (hTrabajadas3 < 40){
+            document.writeln("<p>Empleado 3, no alcanza la cuota normal</p>");
+        }
+
+        if (hTrabajadas3 == cNormal){
+            document.writeln("<p>Empleado 3, tiene la cuota normal</p>");
+        }
+      
+        if (hTrabajadas3 >= cMedia){
+            document.writeln("<p>Empleado 3, tiene la cuota y media</p>");
+        }
+        
+        document.writeln("Su sueldo bruto es de: " + sbruto3);
+        
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

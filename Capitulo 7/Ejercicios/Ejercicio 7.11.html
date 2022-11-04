@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.11.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.11</title>
+    <script>
+        var km = 0;
+        var km_usuario;
+        var litros;
+        var litros_usuario;
+        var kmTotales = 0;
+        var litrosTotales = 0;
+        var prom;
+        var promTotal;
+        var registros_usuario;
+        var contador = 0;
+        var registro;
+
+        registros_usuario = window.prompt("¿Cuántos registros desea usar? ")
+        registro = parseInt(registros_usuario);
+
+        while (registro > contador){
+
+        km_usuario = window.prompt("Ingrese el número de kilometros en su viaje");
+        km = parseInt(km_usuario);
+
+        kmTotales += km;
+
+        litros_usuario = window.prompt("Ingrese el número de litros en su viaje");
+        litros = parseInt(litros_usuario);
+
+        litrosTotales += litros;
+
+        prom = km / litros;
+        document.writeln("<p>El kilómetro por litro es: " + prom + "</p>");
+        contador++;
+
+        }
+        
+        promTotal = kmTotales / litrosTotales;
+        document.writeln("<p>El total de los kilómetros por litro es: "  + promTotal + "</p>");
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

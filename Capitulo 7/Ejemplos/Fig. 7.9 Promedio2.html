@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Fig. 7.9 Promedio2.html -->
+<!-- Repetición controlada por centinela para calcular el promedio de una clase. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa del promedio de una clase: Repeticion controlada por centinela</title>
+    <script>
+
+        var total; // Suma de calificaciones
+        var contadorCalificaciones; // Número de calificaciones introducidas
+        var calificacion; // Calificaciónes escrita por el usuario (como una cadena)
+        var valorCalificacion; // Valor de la calificación (convertido en entero)
+        var promedio; //Promedio de todas las calificaciones
+
+        //Fase de inicialización
+        total = 0; //Borrar el total
+        contadorCalificaciones = 0; //Preparar para iterar
+
+        //Fase de procesamiento
+        //Pedir la entrada y leer la clasificacion del usuario
+        calificacion = window.prompt(
+            "Escriba la calificación entera, -1 para salir:", "0");
+
+        // Convertir calificación de cadena en entero
+        valorCalificacion = parseInt( calificacion );
+        while ( valorCalificacion != -1)
+        {
+            // Sumar valorCalificacion al total
+            total = total + valorCalificacion;
+
+            // Sumar 1 a contadorCalificaciones
+            contadorCalificaciones = contadorCalificaciones + 1;
+
+            // Pedir la entrada y leer calificación del usuario
+            calificacion = window.prompt(
+                "Escriba la calificacion entera, -1 para salir:" , "0" );
+ 
+            // Convertir calificación de cadena en entero
+            valorCalificacion = parseInt( calificacion );
+        } // Fin de while
+
+        // Fase de terminación
+
+        if ( contadorCalificaciones != 0)
+        {
+            promedio = total/contadorCalificaciones;
+
+            //Muestra el promedio de las calificaciones de los exámenes
+            document.writeln(
+                "<h1>El promedio de la clase es " + promedio + "</h1>" );
+        } //Fin de if
+        else
+            document.writeln( "<p>No se introdujeron calificaciones</p>" );            
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

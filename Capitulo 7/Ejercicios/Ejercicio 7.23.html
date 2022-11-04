@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.23.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.23</title>
+    <script>
+        var codigo1,codigo2,codigo3,codigo4,auxiliar;
+
+        codigo1=window.prompt("Ingrese el primer número del codigo encriptado");
+
+        while(codigo1.length>2){
+            window.alert("El codigo es incorrecto");
+            codigo1=window.prompt("Ingrese el primer número del codigo encriptado");
+        }
+
+        codigo2=window.prompt("Ingrese el segundo número del codigo encriptado");
+
+        while(codigo2.length>2){
+            window.alert("El codigo es incorrecto");
+            codigo2=window.prompt("Ingrese el segundo número del codigo encriptado");
+        }
+
+        codigo3=window.prompt("Ingrese el tercer número del codigo encriptado");
+
+        while(codigo3.length>2){
+            window.alert("El codigo es incorrecto");
+            codigo3=window.prompt("Ingrese el tercer número del codigo encriptado");
+        }
+        
+        codigo4=window.prompt("Ingrese el cuarto número del codigo encriptado");
+
+        while(codigo4.length>2){
+            window.alert("El codigo es incorrecto");
+            codigo4=window.prompt("Ingrese el cuarto número del codigo encriptado");
+        }
+
+        codigo1=parseInt(codigo1); codigo2=parseInt(codigo2); codigo3=parseInt(codigo3); codigo4=parseInt(codigo4);
+
+        codigo1-=7;codigo2-=7;codigo3-=7;codigo4-=7;
+
+        console.log(codigo1+""+codigo2+""+codigo3+""+codigo4);
+
+        auxiliar=codigo3;
+        codigo3=codigo1;
+        codigo1=auxiliar;
+
+        document.write("<h2>El código descencriptado es: " +codigo1+ ", " +codigo2+", " +codigo3+ ", "+codigo4);
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

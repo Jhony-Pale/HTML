@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.22.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.21</title>
+</head>
+<body>
+    <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+    <header>
+    <h3>7.21: Escriba una secuencia de comandos que produzca texto de HTML5 que siga mostrando en la ventana de comandos 
+        los múltiplos del entero 2 (a saber, 2, 4, 8, 16, 32, 64, etcétera). Su ciclo no debe terminar (es decir, debe crear un ciclo
+        infinito). ¿Qué ocurre cuando ejecuta este programa?
+    </h3>
+    </header>
+    <p>
+        <ol type="a">
+            <li>
+                <strong>
+                    var numero = 2; <br>
+
+                    document.writeln("&lt;p>" + numero + "&lt;/p>"); <br>
+        
+                    while (numero != 0) { <br>
+                        numero = numero * 2; <br>
+                        document.writeln("&lt;p>" + numero + "&lt;/p>"); <br>
+                    }
+                </strong><br>
+                ¿Que ocurre cuando se ejecuta el programa? <br>
+                Notifica que la pagina no responde mientras aparece que la pagina est&aacute; en ejecucion, 
+                adem&aacute;s, se puede volver lenta la misma p&aacute;gina o hasta el dispositivo m&oacute;vil.<br><br>
+            </li>
+        </ol>
+    </p>
+</body>
+</html>

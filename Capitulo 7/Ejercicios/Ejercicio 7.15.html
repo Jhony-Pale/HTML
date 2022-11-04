@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.15.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.15</title>
+    <script>
+            var numero, numeroUsuario;
+            var contador = 1;
+            var mayor, mayorUsuario;
+
+            mayorUsuario = window.prompt("Ingresa el número: " + contador++);
+            mayor = parseInt(mayorUsuario);
+
+            while (10 >= contador){
+                numeroUsuario = window.prompt("Ingresa el número: " + contador++);
+                numero = parseInt(numeroUsuario);
+
+                if (numero > mayor){
+                    mayor = numero;
+                }
+            }
+
+            document.writeln("<p>El número mayor es: " + mayor + "</p>");
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

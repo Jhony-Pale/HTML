@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.4.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 8.4</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>8.4: Encuentre el error en cada uno de los siguientes segmentos de c&oacute;digo. [Nota: puede haber más de un error].
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        For ( x = 100, x >= 1, ++x )<br> 
+                        document.writeln( x ); 
+                    </strong><br>
+                    Error: No se inicializó con "{" despues del "()" y For es con minuscula "for".<br>
+                </li>
+                <li>
+                    <strong>
+                        El siguiente c&oacute;digo debe imprimirse sin importar si el valor entero es par o impar: <br>
+                        switch ( valor % 2 ) <br>
+                        { <br> 
+                            case 0: document.writeln( "Entero par" );<br> 
+                            case 1: document.writeln( "Entero impar" );
+                        } <br>
+                    </strong><br>
+                    Error: El c&oacute;digo para imprimir algo no es el &oacute;ptimo y a los case les falta el "break" y el opcional "default".<br>
+                </li>
+                <li>
+                    <strong>
+                        El siguiente c&oacute;digo debe imprimir los enteros impares del 19 al 1: 
+                        for ( x = 19; x >= 1; x += 2 ) <br> 
+                        document.writeln( x );                    
+                    </strong><br>
+                    Error: La variable x va en incremento, deberia ir en decremento. y est&aacute; imprimiendo todos los n&uacute;meros sin excepci&oacute;, cuando deberian ser solo los impares.<br>
+                </li>
+                <li>
+                    <strong>
+                        El siguiente c&oacute;digo debe imprimir los enteros pares del 2 al 100: <br>
+                        contador = 2; <br>
+                        do { <br>
+                            document.writeln( contador ); <br>
+                            contador += 2;<br> 
+                        } While ( contador &lt; 100 );
+                    </strong><br>
+                    Error: El contador no llega a la meta (100), deber&iacute;a ser while(contador&lt;=100);.<br>
+                </li>
+            </ol>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.10.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.10</title>
+    <script>
+        var opcion;
+
+        function cancion(){
+            document.write("<p><b>(1) El primer dia de navidad mi amor me regalo un gorrioncillo volador");
+            document.writeln("<br>(2) El segundo dia de navidad mi amor me regalo Dos tortolitas (1) y un gorrioncillo volador");
+            document.writeln("<br>(3) El tercer dia de navidad mi amor me regalo Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador <br> (4) El cuarto dia de navidad mi amor me regalo Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador <br>(5) El quinto dia de navidad mi amor me regalo Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) y un gorrioncillo volador <br>(6) El sexto dia de navidad mi amor me regalo Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador<br>(7) El séptimo dia de navidad mi amor me regalo Siete lindos patos (6) Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas, (2) Dos tortolitas (1) Y un gorrioncillo volador <br>(8) El octavo dia de navidad mi amor me regalo Ocho lecheritas (7) Siete lindos patos (6) Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador <br>(9) El noveno dia de navidad mi amor me regalo Nueve bailarinas (8) Ocho lecheritas (7) Siete lindos patos (6) Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador <br>(10) El decimo dia de navidad mi amor me regalo Diez caballitos (9) Nueve bailarinas (8) Ocho lecheritas (7) Siete lindos patos (6) Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador <br>(11) Al onceavo dia de navidad mi amor me regalo Once flautistas (10) Diez caballitos (9) Nueve bailarinas (8) Ocho lecheritas (7) siete lindos patos (6) Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (1) Y un gorrioncillo volador <br>(12) Al doceavo dia de navidadmi amor me regalo Doce tamborileros (11) Once flautistas (10) Diez caballitos (9) Nueve bailarinas (8) Ocho lecheritas (7) Siete lindos patos (6) Seis gansos dormidos (Todos) Cinco anillos de oro (4) Cuatro aves cantoras (3) Tres gallinitas (2) Dos tortolitas (Todos) Y un gorrioncillo volador. <br>Fin. </b></p>");
+        }
+
+        opcion=window.prompt("Si deseas visualizar la letra de la canción >Los 12 dias de navidad< teclea 1. \nPresiona 0 para salir.");
+        opcion=parseInt(opcion);
+        
+        while(opcion!==0 && opcion!==1 ){
+            window.alert("La opción es incorrecta...");
+            opcion=window.prompt("Si deseas visualizar la letra de la canción >Los 12 dias de navidad< teclea 1. \nPresiona 0 para salir.");
+            opcion=parseInt(opcion);
+        }
+
+        switch(opcion){
+            case 1: document.write("<h2>Los 12 días de Navidad.</h2>");
+                    cancion();
+            break;
+            case 0: document.write("<h2>Salida</h2>");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

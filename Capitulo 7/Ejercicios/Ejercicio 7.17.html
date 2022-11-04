@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.17.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.17</title>
+    <script>
+        var mayor=0, cont=1, numero, mayor2=0;
+
+        while(cont<=10){
+            
+            numero=window.prompt("Ingresa un número: " + cont++);
+            numero=parseInt(numero);
+
+            if(numero>mayor){
+                mayor2=mayor;
+                mayor=numero;
+            }
+        }
+
+        window.alert("El numero mas grande es: "+mayor+"\n El segundo numero mas grande es: "+mayor2);
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

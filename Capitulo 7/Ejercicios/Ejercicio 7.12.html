@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.12.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.12</title>
+    <script>
+        var cuenta, cuentaUsuario;
+        var saldoInicial, saldoInicialUsuario;
+        var totalCargos, totalCargosUsuario;
+        var totalCreditos, totalCreditoUsuario;
+        var limiteCredito, limiteCreditoUsuario;
+        var limite = 0;
+
+        cuentaUsuario = window.prompt("Ingrese el número de cuenta");
+        cuenta = parseInt(cuentaUsuario);
+
+        saldoInicialUsuario = window.prompt("Ingrese el saldo inicial");
+        saldoInicial = parseInt(saldoInicialUsuario);
+
+        totalCargosUsuario = window.prompt("Ingrese el total de cargos");
+        totalCargos = parseInt(totalCargosUsuario);
+
+        totalCreditoUsuario = window.prompt("Ingrese el total de créditos");
+        totalCreditos = parseInt(totalCreditoUsuario);
+
+        limiteCreditoUsuario = window.prompt("Ingrese el limite de crédito");
+        limiteCredito = parseInt(limiteCreditoUsuario);
+
+        limite = saldoInicial + totalCargos - totalCreditos;
+
+            document.writeln("<p>Cuenta: " + cuenta + "</p>");
+            document.writeln("<p>Limite de credito: " + limiteCredito + "</p>");
+            document.writeln("<p>Saldo: " + limite + "</p>");
+        
+        if (limite > limiteCredito){
+            document.writeln("<p>Limite de crédito excedido </p>")
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

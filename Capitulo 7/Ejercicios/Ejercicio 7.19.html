@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.19.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 7.19</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>7.19: (Problema del else suelto) Determine la salida de cada uno de los siguientes segmentos de c&oacute;digo, cuando x es 9 
+            y y es 11, y cuando x es 11 y y es 9. Observe que el int&eacute;rprete ignora la sangr&iacute;a en una secuencia de comandos. 
+            Adem&aacute;s, el int&eacute;rprete de JavaScript siempre asocia un else con el if anterior, a menos que se le indique de otra forma 
+            mediante la colocación de llaves ({}). A primera vista, tal vez no est&eacute; seguro de cual if corresponde a cual else. 
+            Esta situaci&oacute;n se conoce como el problema del "else suelto". Hemos eliminado la sangr&iacute;a del siguiente c&oacute;digo para hacer 
+            el problema más retador. (Sugerencia: Aplique las convenciones de sangr&iacute;a que ha aprendido].
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        if (x &lt; 10) <br>
+                        if (y > 10)br
+                        document.writeln( "&lt;p>*****&lt;/p>");<br>
+                        else <br>
+                        document.writeln( "&lt;p>#####&lt;/p>"); <br>
+                        document.writeln( "&lt;p>$$$$$&lt;/p>");
+                    </strong><br>
+                    Respuesta: Cuando x = 9 y y = 11 imprime los astediscos y los signos de pesos,
+                    y para el caso de x = 11 y y = 9 imprime los signos de pesos.<br><br>
+                </li>
+                <li>
+                    <strong>
+                        if (x &lt; 10) <br>
+                        {<br>
+                        if (y > 10) <br>
+                        document.writeln("&lt;p>*****&lt;/p>"); <br>
+                        } <br>
+                        else <br>
+                        { <br>
+                        document.writeln("&lt;p>#####&lt;/p>"); <br>
+                        document.writeln("&lt;p>$$$$$&lt;/p>"); <br>
+                        }
+                    </strong><br>
+                    Respuesta: Cuando x = 9 y y = 11 imprime los astediscos, 
+                    y para el caso de x = 11 y y = 9 imprime los gotos y los signo de pesos<br><br>
+                </li>
+            </ol>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.10.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.10</title>
+</head>
+<body>
+    <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>7.10: Sin ejecutarla, determine lo que imprime esta secuencia de comandos:
+        </h3>
+        </header>
+        <strong>
+            &lt;!DOCTYPE html&gt; <br>
+                &lt;html&gt; <br>
+                &lt;head&gt; <br>
+                    &lt;meta charset="utf-8"&gt; <br>
+                    &lt;title&gt;Secuencia de comandos misteriosa&lt;/title&gt; <br>
+                    &lt;script&gt; <br>
+                            var y; <br>
+                            var x = 1; <br>
+                            var total = 0; <br>
+                
+                            while (x &lt;= 10) <br>
+                            { <br>
+                                y = x * x; <br>
+                                document.writeln("&lt;p&gt;" + y + "&lt;/p&gt;"); <br>
+                                total += y; <br>
+                                ++x; <br>
+                            } <br>
+                            
+                            document.writeln("&lt;p&gt; El total es: " + total + "&lt;/p&gt;"); <br>
+                        &lt;/script&gt; <br>
+                    &lt;/head&gt;&lt;body&gt; &lt;/body&gt; <br>
+                &lt;/html&gt; <br>
+            </li><br>
+        </strong>
+            <p>Primero imprime el valor de y  (1), luego cambia a 2  e imprime 4 y así sucesivamente,
+                por lo que imprimirá 1 4 9 16 25... , y por ultimo imprime el total, o sea 385.
+            </p>
+</body>
+</html>

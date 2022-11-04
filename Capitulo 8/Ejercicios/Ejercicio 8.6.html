@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.6.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.6</title>
+    <script>
+        var cant, num = [], menor = 0;
+
+        cant=window.prompt("¿Cuántos números desea ingresar?: ");
+        cant=parseInt(cant);
+
+        for(let i=0; i<cant; i++){
+
+            num[i]=window.prompt("Ingresa un numero entero positivo: ");
+            num[i]=parseInt(num[i]);
+            
+            while(num[i]<0 || isNaN(num[i])){45
+                window.alert("Sólo son validos los números enteros positivos...");
+                num[i]=window.prompt( "Ingresa un numero entero positivo: ");
+                num[i]=parseInt(num[i]);
+            }
+            
+            if(menor>num[i] || i==0){
+                menor=num[i];
+            }
+        }
+
+        document.write("<h2>El número menor es: "+ menor +"</h2>");
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

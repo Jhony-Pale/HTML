@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.8.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.8</title>
+    <style type="text/css">
+        table{  width: 300px;
+                border-collapse: collapse;
+                background-color:lightblue;}
+
+        table,td,th{border:1px solid black;
+                    padding: 4px;}
+
+        th{
+            text-align:left;
+            color: white;
+            background-color:darkred;
+        }
+
+        tr.filaimpar{
+            background-color: white;
+        }
+    </style>
+
+    <script>
+        var Monto,princ = 100.00; tasa=0.05;
+
+        while(tasa<=0.10){
+            document.write("<table>");
+            document.writeln("<caption>C&aacute;lculo de interés compuesto con <b>Tasa del: "+ tasa.toFixed(2)+"%</b></caption>");
+            document.writeln("<thead><tr><th>A&ntilde;o</th>");
+            document.writeln("<th>Monto en dep&oacute;sito</th>");
+            document.writeln("</tr></thead><tbody>");
+            for(var Anio=1; Anio<=10; ++Anio){
+                Monto=princ*Math.pow(1.0+tasa,Anio);
+                if(Anio%2!==0){
+                    document.writeln("<tr class=filaimpar'><td>"+Anio+"</td><td>"+Monto.toFixed(2)+"</td></tr>");
+                }else{
+                    document.writeln( "<tr><td>" + Anio + "</td><td>" + Monto.toFixed(2) + "</td></tr>" );
+                }
+                
+            }
+            document.writeln("</tbody></table><br>");
+            tasa+=0.01
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

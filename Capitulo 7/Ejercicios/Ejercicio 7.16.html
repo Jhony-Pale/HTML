@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.16.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.16</title>
+    <script>
+        var contador = 1;
+        document.writeln("<table border=1>" +
+            "<thead><tr><th>N</th><th>10*N</th><th>100*N</th><th>1000*N</th></tr></thead>");
+
+        while ( 6 >= contador){
+            
+            document.writeln("<tbody> <tr><td>" + contador + "</td><td>" + 10 * contador + "</td><td>" + 100 * contador + "</td><td>" + 1000 * contador++ + "</td></tr> </tbody>");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

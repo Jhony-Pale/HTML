@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.20.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.20</title>
+    <script>
+        function texto()
+        {
+            var palabra = prompt("Ingresa un número: ").toLowerCase();
+         
+            // eliminamos los espacios en blanco
+            palabra=palabra.replace(/ /g, "");
+
+            while(palabra.length<5){
+                window.alert("Ingrese número con 5 o mas digitos: ");
+                var palabra=prompt("Ingresa un número: ").toLowerCase();
+                palabra=palabra.replace(/ /g, "");
+            }
+         
+            for (var i=0;i<palabra.length;i++){
+                if(palabra[i]!=palabra[palabra.length-i-1]){
+                    return false;
+                }
+            }
+            return true;
+        }
+         
+        if(texto())
+        {
+            alert("Es un palíndromo");
+        }else{
+            alert("No es un palíndromo")
+        }
+        </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+    
+</body>
+</html>

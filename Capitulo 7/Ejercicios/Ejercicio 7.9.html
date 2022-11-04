@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.9.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 7.9</title>
+    </head>
+
+    <body>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>7.9: Identifique y corrija los errores en cada una de los siguientes segmentos de c&oacute;digo.
+            [Nota: puede haber m&aacute;s de un error en cada fragmento; a menos que haya declaraciones presentes,
+            suponga que todas las variables est&aacute;n declaradas e inicializadas correctamente].
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        if (edad >= 65); <br>
+                        document.writeln( "Edad es mayor o igual que 65"); <br>
+                        else <br>
+                        document.writeln( "Edad es menor que 65)"; 
+                    </strong><br>
+                    Error: El primer error es que en la condici&oacute;n del if no es necesario el punto y coma;
+                    el segundo error es que en el segundo document.writeln las comillas están mal puestas.<br>
+                    Correci&oacute;n: Eliminar el punto y coma del if, colocar las comillas dentro del mensaje ().<br><br>
+                </li>
+                <li>
+                    <strong>
+                        var x = 1, total; <br>
+                        while (x&lt;=10) <br>
+                        { <br>
+                        total += x;<br>
+                        ++x; <br>
+                        }
+                    </strong><br>
+                    Error: La variable total no est&aacute; declarada.<br>
+                    Correci&oacute;n: Darle cualquier valor num&eacute;rico entero a la variable total.<br><br>
+                </li>
+                <li>
+                    <strong>
+                        var x = 1; <br>
+                        var total = 0; <br>
+                        while (x&lt;=100) <br>
+                        total = += x; <br>
+                        ++x;  
+                    </strong><br>
+                    Error: La variable x y total no están declaradas en ningún sitio, aparte no hay llaves en el bucle while.<br>
+                    Correci&oacute;n: Declarar ambas variables y agregar las dos llaves en el while.<br><br>
+                </li>
+                <li>
+                    <strong>
+                        var y = 5; <br>
+                        while (y > 0) <br>
+                        {<br>
+                        document.writeln(y); <br>
+                        ++y; 
+                    </strong><br>
+                    Error: Le falta llave que cierra despu&eacute;s de ++y;.<br>
+                    Correci&oacute;n: Agregar la llave de cierre despu&eacute;s de ++y;.<br><br>
+                </li>
+            </ol>
+        </p>
+    </body>
+</html>

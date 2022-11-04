@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.11.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.11</title>
+    <script>
+        let validar = /[0-9]/;
+        let num = 1, cant, total = 0, semana = 0, aux = 0;
+        
+        while(num != 0){
+            num = window.prompt("Ingrese el número del producto\nUsa 0 para salir.", "0");
+            
+            if(validar.test(num) && (parseInt(num) >= 0 && parseInt(num) <= 5)){
+                
+                num = parseInt(num);
+
+                if(num == 0) break;
+
+                cant = window.prompt("Ingrese la cant del producto ["+num+"]", 1);
+
+                if(validar.test(cant) && parseInt(cant) > 0){
+
+                    cant = parseInt(cant);
+
+                    switch(num){
+                        case 1:
+                            total = 2.98 * cant;
+                            break;
+                        case 2:
+                            total = 4.50 * cant;
+                            break;
+                        case 3:
+                            total = 9.98 * cant;
+                            break;
+                        case 4:
+                            total = 4.49 * cant;
+                            break;
+                        case 5:
+                            total = 6.87 * cant;
+                            break;
+                    }
+
+                    document.writeln("<p>Producto: " + num + "<br>Total por producto: &dollar;" + total.toFixed(2));
+                    
+                    semana += total;
+
+                    aux++;
+                }
+                else{
+                    document.writeln("Ingrese un valor válido.");
+                    break;
+                }
+                
+            }
+            else{
+                document.writeln("Ingrese un valor válido.");
+                break;
+            }
+            
+        }
+
+        if(aux != 0) document.writeln("<p>Total: &dollar;" + semana.toFixed(2) + "</p>");
+    </script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html"><input type="button" value="Regresar"></a>
+    </header>
+</body>
+</html>

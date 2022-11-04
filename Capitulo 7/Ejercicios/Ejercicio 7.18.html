@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.18.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7.18</title>
+</head>
+<body>
+    <a href="../../index.html"><input type="button" value="Regresar"></a>
+
+        <header>
+        <h3>7.18: Sin ejecutar la siguiente secuencia de comandos, determine lo que imprime:
+        </h3>
+        </header>
+        <strong>
+            &lt;!DOCTYPE html&gt; <br>
+                &lt;html&gt; <br>
+                &lt;head&gt; <br>
+                    &lt;meta charset="utf-8"&gt; <br>
+                    &lt;title&gt;Secuencia de comandos misteriosa&lt;/title&gt; <br>
+                    &lt;script&gt; <br>
+                            var fila = 10;<br>
+                                var columna;<br>
+                    
+                                while (fila >= 1){ <br>
+                                    columna = 1;<br>
+                                    document.writeln("p>" );<br>
+                                    
+                                    while (columna &lt;= 10){<br>
+                                        document.write(fila % 2 == 1 ? "&lt;" : ">");<br>
+                                        ++columna;<br>
+                                    } <br>
+                    
+                                    --fila; <br>
+                                    document.writeln("&lt;/p>" ); <br>
+                                }
+                        &lt;/script&gt; <br>
+                    &lt;/head&gt;&lt;body&gt; &lt;/body&gt; <br>
+                &lt;/html&gt; <br>
+            </li><br>
+        </strong>
+            <p>Va a imprimir los siguientes signos: <br>
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; <br>
+                &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; <br>
+                Este mismo patron otras 4 veces.
+            </p>
+</body>
+</html>
