@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.12.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10.12</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        let num = [];
+
+        function iniciar(){
+            var boton = document.getElementById("botonCalcular");
+            var Numero = document.getElementById("Numero");
+            var Valor = document.getElementById("Valor");
+            var msj = document.getElementById("msj");
+            var resul = document.getElementById("resul");
+
+            boton.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            if(num.length == 10){
+                msj.innerHTML = "Ya hay 10 valores ingresados."
+            }
+            else{
+                resul.innerHTML = "";
+                var valorIngresado = parseInt(Valor.value);
+                if(valorIngresado >= 10 && valorIngresado <= 100){
+                    guardarDato(valorIngresado);
+                    imprimirDatos();
+                }
+                else{
+                    msj.innerHTML = "Valor no válido";
+                }
+            }
+        }
+
+        function guardarDato(valor){
+            if(num.indexOf(valor) == -1){
+                msj.innerHTML = "El valor ha sido ingresado";
+                num.push(valor);
+            }
+            else{
+                msj.innerHTML = "El valor está duplicado";
+                num.push(0);
+            }
+        }
+
+        function imprimirDatos(){
+            for(var n in num){
+                if(num[n] != 0){
+                    resul.innerHTML += num[n] + "<br>";
+                }
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 10.11.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.13.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <form action="#">
+            <label>
+                <span id="Numero">Número:</span>
+                <input type="number" name="Numero" id="Valor">
+                <input type="button" value="Ingresar" id="botonCalcular">
+            </label>
+        </form>
+        <p id="msj"></p>
+        <p id="resul"></p>
+    </div>
+</body>
+</html>

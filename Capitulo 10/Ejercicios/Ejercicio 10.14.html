@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.14.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10.14</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <style type="text/css">
+        td{
+            border: 1px solid black;
+        }
+        .pestania{
+            color: black;
+            min-width:20px;
+            border: 0px;
+            font-weight: bold;
+        }
+
+        thead .pestania{
+            border: 0px;
+        }
+    </style>
+
+    <script>
+        let Lanzar = new Array(6);
+        Lanzar[0] = new Array(7);
+        Lanzar[1] = new Array(7);
+        Lanzar[2] = new Array(7);
+        Lanzar[3] = new Array(7);
+        Lanzar[4] = new Array(7);
+        Lanzar[5] = new Array(7);
+
+        let total = [0,0,0,0,0,0,0,0,0,0,0];
+
+        function iniciar(){
+            var res = document.getElementById("res");
+            var boton = document.getElementById("lanzar");
+            var totales = document.getElementById("totales");
+            
+            reiniciar();
+
+            boton.addEventListener("click", lanzar, false);
+        }
+
+        function lanzar(){
+            for(var x = 1; x <= 36000; x++){
+                var dado1 = Math.floor(1 + Math.random() * 6);
+                var dado2 = Math.floor(1 + Math.random() * 6);
+                guardarDados(dado1, dado2);
+            }
+            
+            imprimirLanzar();
+        }
+
+        function guardarDados(valor1, valor2){
+            Lanzar[(valor1 - 1)][(valor2 - 1)] += 1;
+            var suma = valor1 + valor2;
+            switch(suma){
+                case 2:
+                    total[0] ++;
+                    break;
+                case 3:
+                    total[1] ++;
+                    break;
+                case 4:
+                    total[2] ++;
+                    break;
+                case 5:
+                    total[3] ++;
+                    break;
+                case 6:
+                    total[4] ++;
+                    break;
+                case 7:
+                    total[5] ++;
+                    break;
+                case 8:
+                    total[6] ++;
+                    break;
+                case 9:
+                    total[7] ++;
+                    break;
+                case 10:
+                    total[8] ++;
+                    break;
+                case 11:
+                    total[9] ++;
+                    break;
+                case 12:
+                    total[10] ++;
+                    break;
+            }
+        }
+
+        function imprimirLanzar(){
+            var tabla = "<table cellspacing='0'><thead><th class='pestania'></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></thead><tbody>";
+            for(var x = 0; x < 6; x++){
+                tabla += "<tr><td class='pestania'>"+ (x + 1) + "</td>";
+                for(var y = 0; y < 6; ++y){
+                    tabla += "<td>" + Lanzar[x][y] + "</td>";
+                }
+                tabla += "</tr>";
+            }
+            tabla += "</tbody></table>";
+
+            res.innerHTML = tabla;
+
+            totales.innerHTML = "Número de veces de cada suma:<br>";
+            for(var t in total){
+                if(total[t] == Math.max(...total))
+                    totales.innerHTML += "<span style='color:blue;'>" + (parseInt(t) + 2) + " ---> " + total[t] + "</span><br>";    
+                else
+                    totales.innerHTML += (parseInt(t) + 2) + " --> " + total[t] + "<br>";
+            }
+        }
+
+        function reiniciar(){
+            for(var x = 0; x < 6; ++x){
+                for(var y = 0; y < 7; ++y){
+                    Lanzar[x][y] = 0;
+                }
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 10.13.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.15.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <button id="lanzar">Lanzar</button>
+        <p id="res"></p>
+        <p id="totales"></p>
+    </div>
+</body>
+</html>

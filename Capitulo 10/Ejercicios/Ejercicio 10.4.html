@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.4.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 10.4</title>
+    </head>
+
+    <body>
+        <a href="Ejercicio 10.3.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.5.html"><button type="submit">Siguiente</button></a>
+        <header>
+        <h3>10.4:  Escriba instrucciones de JavaScript (con respecto al arreglo <em>tabla</em>) para realizar cada una de las siguientes tareas:
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        Declarar y crear el arreglo con tres filas y tres columnas..
+                    </strong><br>
+                    Instrucci&oacute;n: <br>
+                    <b>var</b> arreglo = [ <br>
+                    &emsp;[0, 0, 0], <br>
+                    &emsp;[0, 0, 0], <br>
+                    &emsp;[0, 0, 0] <br>
+                    ]; <br><br>
+                </li>
+                <li>
+                    <strong>
+                        Almacenar el número total de elementos en la variable <em>totalElementos</em>..
+                    </strong><br>
+                    Instrucci&oacute;n: <br>
+                    <b>var</b> totalElementos = arreglo.length * 3; <br><br>
+                </li>
+                <li>
+                    <strong>
+                        Usar una instrucción <em>for...in</em> para inicializar cada elemento del arreglo con la suma de sus índices de fila y de columna. 
+                        Suponga que las variables x y y declaran como variables de control..
+                    </strong><br>
+                    Instrucci&oacute;n: <br>
+                    <b>for</b> ( <b>var</b> x <b>in</b> arreglo ){ <br>
+                        &emsp;<b>for</b> ( <b>var</b> y <b>in</b> arreglo[x] ){<br>
+                        &emsp;&emsp;arreglo[x][y] = x + y; <br>
+                        &emsp;} <br>
+                        } <br><br>
+                </li>
+                
+            </ol>
+        </p>
+    </body>
+</html>

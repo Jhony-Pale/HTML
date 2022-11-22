@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.5.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 10.5</title>
+    </head>
+
+    <body>
+        <a href="Ejercicio 10.4.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.6.html"><button type="submit">Siguiente</button></a>
+        <header>
+        <h3>10.5 Encuentre el o los errores en cada uno de los siguientes segmentos de programa y corríjalos:
+        </h3>
+        </header>
+        <p>
+            <ol type="a">
+                <li>
+                    <strong>
+                        <b>var</b> b = <b>new</b> Array(10);<br>
+                        <b>var</b> longitud = b.length; <br>
+                        <b>for</b> ( <b>var</b> i = 0; i <= longitud; ++i ){ <br>
+                        &emsp;b[ i ] = 1; <br>
+                        }   
+                    </strong><br>
+                    Error: en la condición <em>i <= longitud</em>, porque no existe el índice 10 en el arreglo: <br>
+                    <b>var</b> b = <b>new</b> Array(10);<br>
+                    <b>var</b> longitud = b.length; <br>
+                    <b>for</b> ( <b>var</b> i = 0; i < longitud; ++i ){ <br>
+                    &emsp;b[ i ] = 1;.<br><br>
+                </li>
+                <li>
+                    <strong>
+                        <b>var</b> a = [ [1, 2], [3, 4] ]; <br>
+                        a[1, 1] = 5;   
+                    </strong><br>
+                    Error: Para poder acceder a un arreglo bidimensional se utilizan doble corchete [][]: <br>
+                    <b>var</b> a = [ [1, 2], [3, 4] ]; <br>
+                    a[1][1] = 5;.<br><br>
+                </li>
+            </ol>
+        </p>
+    </body>
+</html>
