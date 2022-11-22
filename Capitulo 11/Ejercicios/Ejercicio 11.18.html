@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.18.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.18</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+
+    <script>
+        var res;
+        function iniciar(){
+            res = document.getElementById("res");
+            
+            imprimir();
+        }
+
+        function imprimir(){
+            let numero;
+            for(let i = 0; i <= 255; i++){
+                numero = i;
+                if(i < 10) numero = "00" + i;
+                if(i < 100 && i > 9) numero = "0" + i;
+                res.innerHTML += numero + " pertenece al caracter: " + String.fromCharCode(parseInt(numero)) + "\n";
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <p>
+        Códigos de 000 a 255 con sus caracteres correspondientes:
+    </p>
+    <div class="boxContent">
+        <textarea id="res"></textarea>
+    </div>
+</body>
+</html>

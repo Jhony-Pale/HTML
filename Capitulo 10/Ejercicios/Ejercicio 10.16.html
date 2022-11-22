@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.16.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10.16</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        let Num = new Array(1000);
+
+        function LLenar(){
+            for(var i = 0; i < 1000; i++){
+                Num[i] = 1;
+            }
+        }
+
+        function iniciar(){
+            var resultados = document.getElementById("resultados");
+            LLenar();
+            primerosElementos();
+            multiploIndice();
+            Mostrar();
+        }
+
+        function primerosElementos(){
+            Num[0] = 0;
+            Num[1] = 0;
+        }
+
+        function multiploIndice(){
+            for(var i = 2; i < 1000; i++){
+                if(Num[i] == 1){
+                    for(var y = i + 1; y < 1000; y++){
+                        if(y % i == 0) Num[y] = 0;
+                    }
+                }
+                if(i > 2){
+                    if(i % 2 == 0) Num[i] = 0;
+                }
+
+                if(i > 3){
+                    if(i % 3 == 0) Num[i] = 0;
+                }
+                if(i > 4){
+                    if(i % 4 == 0) Num[i] = 0;
+                }
+                if(i > 5){
+                    if(i % 5 == 0) Num[i] = 0;
+                }
+                if(i > 6){
+                    if(i % 6 == 0) Num[i] = 0;
+                }
+                if(i > 7){
+                    if(i % 7 == 0) Num[i] = 0;
+                }
+                if(i > 8){
+                    if(i % 8 == 0) Num[i] = 0;
+                }
+                if(i > 9){
+                    if(i % 9 == 0) Num[i] = 0;
+                }
+            }
+        }
+
+        function Mostrar(){
+            
+            for(var n in Num){
+                if(Num[n] == 1){
+                    resultados.innerHTML += n + " - ";
+                }
+            }
+            tabla += "</tbody></table>"
+
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 10.15.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.17.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <p><strong>Números primos: </strong></p>
+        <p id="resultados"></p>
+    </div>
+</body>
+</html>

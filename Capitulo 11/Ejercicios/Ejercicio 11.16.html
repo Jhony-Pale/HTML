@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.16.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.16</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+
+    <script>
+        var Texto, boton, res;
+        function iniciar(){
+            Texto = document.getElementById("Texto");
+            res = document.getElementById("res");
+            boton = document.getElementById("imprimir");
+
+            boton.addEventListener("click", imprimir, false);
+        }
+
+        function imprimir(){
+            var texto = Texto.value + "";
+            if(texto.indexOf("ed") == 0) res.innerHTML += texto + "\n";
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <p>Ingresa algunas líneas de texto. Sólo serán mostradas las que inicien con las letras "ed".</p>
+    <div class="boxContent">
+        <form action="#">
+            <input type="text" name="Texto" id="Texto">
+            <input type="button" value="Mostrar" id="imprimir">
+        </form> <br>
+        <textarea id="res" cols="30" rows="10"></textarea>
+    </div>
+</body>
+</html>

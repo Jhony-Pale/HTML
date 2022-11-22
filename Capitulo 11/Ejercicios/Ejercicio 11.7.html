@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.7.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.7</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        let art = ["el", "un", "algún", "ningún"];
+        let sust = ["niño", "niña", "perro", "ciudad", "auto"];
+        let verbo = ["manejó", "saltó", "corrió", "caminó", "omitió"];
+        let prep = ["a", "desde", "encima de", "debajo de", "sobre"];
+        let res;
+
+        function iniciar(){
+            res = document.getElementById("res");
+
+            historia();
+        }
+
+        function historia(){
+            res.innerHTML = "Había una vez...\n";
+            for(var i = 0; i < 20; i++){
+                
+                res.innerHTML += generarart() + " ";
+
+                res.innerHTML += generarsust() + " ";
+
+                res.innerHTML += generarVerbo() + " ";
+
+                res.innerHTML += generarprep() + " ";
+
+                res.innerHTML += generarart() + " ";
+
+                res.innerHTML += generarsust() + " ";
+
+            }
+            res.innerHTML += "\nFIN.";
+        }
+
+        function generarart(){
+            var posicion = Math.floor(Math.random() * 4);
+            return art[ posicion ];
+        }
+
+        function generarsust(){
+            var posicion = Math.floor(Math.random() * 5);
+            return sust[ posicion ];
+        }
+
+        function generarVerbo(){
+            var posicion = Math.floor(Math.random() * 5);
+            return verbo[ posicion ];
+        }
+
+        function generarprep(){
+            var posicion = Math.floor(Math.random() * 5);
+            return prep[ posicion ];
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <div class="boxContent">
+        <textarea id="res" cols="30" rows="10"></textarea>
+    </div>
+</body>
+</html>

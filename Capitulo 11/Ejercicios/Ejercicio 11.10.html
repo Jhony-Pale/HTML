@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.10.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.10</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+
+    <script>
+        let boton, mensajes, Area, Num;
+        let exp = /^[(]?[0-9]{3}[)][0-9]{3}-[0-9]{4}/;
+        function iniciar(){
+            boton = document.getElementById("separar");
+            var campoTelefono = document.getElementById("campoTelefono");
+            mensajes = document.getElementById("mensajes");
+            Area = document.getElementById("Area");
+            Num = document.getElementById("Num");
+
+            boton.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            Area.innerHTML = "";
+            Num.innerHTML = "";
+            if(exp.test(campoTelefono.value))
+                separar();
+        }
+
+        function separar(){
+            let temp = campoTelefono.value;
+            Area.innerHTML = "Código de área: " + temp.substring(1,4) + "<br>";
+            let numero = temp.substring(5,13) + "";
+            numero = numero.split("-",8);
+            Num.innerHTML += "Número de teléfono: " + numero[0]+ numero[1];
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+        <div class="boxContent">
+            <form action="#">
+                <input type="text" name="Telefono" id="campoTelefono" pattern="^[(]?[0-9]{3}[)][0-9]{3}-[0-9]{4}" placeholder="(XXX)XXX-XXXX" required>
+                <input type="submit" value="Separar número" id="separar">
+            </form>
+            <p id="mensajes"></p>
+            <p id="Area"></p>
+            <p id="Num"></p>
+        </div>
+</body>
+</html>

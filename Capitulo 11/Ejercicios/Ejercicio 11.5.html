@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.5.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.5</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        function iniciar(){
+        var res = document.getElementById("res");
+        var Num = document.getElementById("Num");
+        var boton = document.getElementById("calcular");
+
+        boton.addEventListener("click", redondear, false);
+        }
+
+        function redondear(){
+            redondearAEntero(Num.value);
+            redondearADecimas(Num.value);
+            redondearACentesimas(Num.value);
+            redondearAMilesimas(Num.value);
+        }
+
+        function redondearAEntero(numero){
+            res.innerHTML = "<br>Redondeado a entero: " + (Math.round(numero));
+        }
+
+        function redondearADecimas(numero){
+            res.innerHTML += "<br>Redondeado a décimas: " + (Math.round(numero * 10 + .5) / 10);
+        }
+
+        function redondearACentesimas(numero){
+            res.innerHTML += "<br>Redondeado a centésimas: " + (Math.round(numero * 100 + .5) / 100);
+        }
+
+        function redondearAMilesimas(numero){
+            res.innerHTML += "<br>Redondeado a milésimas: " + (Math.round(numero * 1000 + .5) / 1000);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+        <div class="boxContent">
+            <form action="#">
+                <input type="number" name="Numero" id="Num">
+                <input type="button" value="Redondear número" id="calcular">
+            </form>
+            <p id="res"></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.17.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.17</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var Num, boton, res;
+        function iniciar(){
+            Num = document.getElementById("Num");
+            res = document.getElementById("res");
+            boton = document.getElementById("convertir");
+
+            boton.addEventListener("click", imprimir, false);
+        }
+
+        function imprimir(){
+            var numero = Num.value + "";
+            if(numero == "") numero = 0;
+            numero = parseInt(numero);
+
+            res.innerHTML = String.fromCharCode(numero);
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <p>Ingresa el número de un caracter:</p>
+    <div class="boxContent">
+        <form action="#">
+            <input type="number" name="Numero" id="Num" placeholder="Número">
+            <input type="button" value="Convertir a caracter" id="convertir">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+</html>

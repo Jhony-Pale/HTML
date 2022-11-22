@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.13.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.13</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var Caract;
+        function iniciar(){
+            var boton = document.getElementById("buscar");
+            var Texto = document.getElementById("Texto");
+            Caract = document.getElementById("caracter");
+            var res = document.getElementById("res");
+
+            
+            boton.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            res.innerHTML = "";
+            console.log(Caract.value);
+            if(!Texto.value == "" && !Caract.value == "")
+                imprimir();
+        }
+
+        function imprimir(){
+            var texto = Texto.value;
+            var caracter = Caract.value;
+            var coincidencias = 0;
+            var coincidencia = texto.indexOf(caracter);
+            while(coincidencia != -1){
+                coincidencias ++;
+                coincidencia = texto.indexOf(caracter, coincidencia + 1);
+            }
+            res.innerHTML = "Este caracter de texto aparece " + coincidencias + " veces.";
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <div class="boxContent">
+        <form action="#">
+            <input type="text" name="Texto" id="Texto" placeholder="Ingresa el texto">
+            <input type="text" name="Caracter" id="caracter" placeholder="Ingresa un carácter">
+            <input type="button" value="Buscar caracter" id="buscar">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+</html>

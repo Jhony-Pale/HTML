@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.6.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.6</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        function iniciar(){
+    var resultado = document.getElementById("resultado");
+    var campoObjeto1 = document.getElementById("campoObjeto1");
+    var campoObjeto2 = document.getElementById("campoObjeto2");
+    var boton = document.getElementById("comparar");
+
+    boton.addEventListener("click", compararObjetos, false);
+}
+
+function compararObjetos(){
+    let objeto1 = parseFloat(campoObjeto1.value);
+    let objeto2 = parseFloat(campoObjeto2.value);
+    if(objeto1 == objeto2)
+        resultado.innerHTML = "La cadena " + objeto1 + " es igual a " + "la cadena " + objeto2;
+    else if(objeto1 > objeto2)
+        resultado.innerHTML = "La cadena " + objeto1 + " es mayor a " + "la cadena " + objeto2;
+    else
+        resultado.innerHTML = "La cadena " + objeto1 + " es menor a " + "la cadena " + objeto2;
+}
+
+window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+        <div class="boxContent">
+            <form action="#">
+                <p>Ingresa dos cadenas de números: </p>
+                <input type="number" name="Objeto1" id="campoObjeto1">
+                <input type="number" name="Objeto2" id="campoObjeto2">
+                <input type="button" value="Comparar cadenas" id="comparar">
+            </form>
+            <p id="resultado"></p>
+        </div>
+</body>
+</html>

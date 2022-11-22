@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.10.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10.10</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        let rangos = [0,0,0,0,0,0,0,0,0];
+
+        function iniciar(){
+            var botonCalcular = document.getElementById("botonCalcular");
+            var Venta = document.getElementById("Venta");
+            var resul = document.getElementById("resul");
+            var CRangos = document.getElementById("CRangos");
+
+            botonCalcular.addEventListener("click",calcularComision, false);
+        }
+
+        function calcularComision(){
+            var ventaBruta = parseInt(Venta.value);
+            var comision = 200 + (ventaBruta * 0.09);
+            CRangos.innerHTML = "";
+            guardarDatos(comision);
+            imprimirDatos(comision);
+        }
+
+        function guardarDatos(valor){
+            switch(true){
+                case valor >= 200 && valor <= 299:{
+                    rangos[0]++;
+                    break;
+                }
+                
+                case valor >= 300 && valor <= 399:{
+                    rangos[1]++;
+                    break;
+                }
+                
+                case valor >= 400 && valor <= 499:{
+                    rangos[2]++;
+                    break;
+                }
+                
+                case valor >= 500 && valor <= 599:{
+                    rangos[3]++;
+                    break;
+                }
+                
+                case valor >= 600 && valor <= 699:{
+                    rangos[4]++;
+                    break;
+                }
+                
+                case valor >= 700 && valor <= 799:{
+                    rangos[5]++;
+                    break;
+                }
+                
+                case valor >= 800 && valor <= 899:{
+                    rangos[6]++;
+                    break;
+                }
+                
+                case valor >= 900 && valor <= 999:{
+                    rangos[7]++;
+                    break;
+                }
+                
+                case valor >= 1000:{
+                    rangos[8]++;
+                    break;
+                }
+                
+            }
+        }
+        function imprimirDatos(valor){
+            resul.innerHTML = "Salario: " + valor;
+            for(var r in rangos){
+                CRangos.innerHTML += "Rango " + (parseInt(r) + 1) + "): " + rangos[r] + "<br>";
+            }
+        }
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 10.9.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.11.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <form action="#">
+            <label>
+                Ingresa la venta bruta:
+                <input id="Venta" type="number" name="Venta bruta">
+            </label>
+            <input id="botonCalcular" type="button" value="Calcular" id="botonCalcular">
+            <p id="resul"></p>
+        </form>
+        <p id="CRangos"></p>
+    </div>
+</body>
+</html>

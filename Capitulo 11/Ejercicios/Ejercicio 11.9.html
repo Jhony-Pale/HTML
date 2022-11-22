@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.9.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.9</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        let boton, res, TextoUs, texto;
+        function iniciar(){
+            boton = document.getElementById("Traductor");
+            res = document.getElementById("res");
+            TextoUs = document.getElementById("TextoUs");
+
+            boton.addEventListener("click", Traductor, false);
+        }
+
+        function Traductor(){
+            res.innerHTML = "";
+            texto = (TextoUs.value).split(" "); 
+            for(let palabra in texto){
+                texto[palabra] = texto[palabra].substring(1, (texto[palabra].length + 1) ) + texto[palabra][0] + "ae";
+                
+                imprimirPalabraEnLatin(texto[palabra]);
+            }
+        }
+
+        function imprimirPalabraEnLatin(palabra){
+            res.innerHTML += palabra + "  ";
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <div class="boxContent">
+        <form action="#">
+            <input type="text" name="Texto" id="TextoUs">
+            <input type="button" value="Traducir texto" id="Traductor">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+</html>

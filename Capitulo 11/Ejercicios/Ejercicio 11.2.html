@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.2.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.2</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        function iniciar(){
+    var Ahora = document.getElementById("Ahora");
+    var Ayer = document.getElementById("Ayer");
+    var Anios = document.getElementById("Anios");
+    var Semana = document.getElementById("Semana");
+
+    var alerta = document.getElementById("alerta");
+
+    Ahora.addEventListener("click", ahora, false);
+    Ayer.addEventListener("click", ayer, false);
+    Anios.addEventListener("click", diezAnios, false);
+    Semana.addEventListener("click", semana, false);
+}
+
+function ahora(){
+    var actual = new Date();
+    actual.setMonth(actual.getMonth() + 1);
+
+    var fecha = actual.getDate() + "/" + actual.getUTCMonth() + "/" + actual.getFullYear();
+
+    document.getElementById("alerta").innerHTML = "<p>Hora: " + actual.getHours() + ":" + actual.getMinutes() + "<br>Fecha: " + fecha + "</p>";
+}
+
+function ayer(){
+    var fecha_ayer = new Date();
+    fecha_ayer.setMonth(fecha_ayer.getMonth() + 1);
+
+    fecha_ayer.setDate(fecha_ayer.getDate() - 1);
+
+    var fecha = fecha_ayer.getDate() + "/" + fecha_ayer.getMonth() + "/" + fecha_ayer.getFullYear();
+
+    document.getElementById("alerta").innerHTML = "<p>Hora: " + fecha_ayer.getHours() + ":" + fecha_ayer.getMinutes() + "<br>Fecha: " + fecha + "</p>";
+}
+
+function diezAnios(){
+    var diez_anios = new Date();
+    diez_anios.setMonth(diez_anios.getMonth() + 1);
+    
+    diez_anios.setFullYear(diez_anios.getFullYear() - 10, diez_anios.getMonth(), diez_anios.getDate());
+
+    var fecha = diez_anios.getDate() + "/" + diez_anios.getMonth() + "/" + diez_anios.getFullYear();
+
+    document.getElementById("alerta").innerHTML = "<p>Hora: " + diez_anios.getHours() + ":" + diez_anios.getMinutes() + "<br>Fecha: " + fecha + "</p>";
+}
+
+function semana(){
+    var fecha_semana = new Date();
+    fecha_semana.setMonth(fecha_semana.getMonth() + 1);
+    
+    fecha_semana.setDate(fecha_semana.getDate() - 7);
+
+    var fecha = fecha_semana.getDate() + "/" + fecha_semana.getMonth() + "/" + fecha_semana.getFullYear();
+
+    document.getElementById("alerta").innerHTML = "<p>Hora: " + fecha_semana.getHours() + ":" + fecha_semana.getMinutes() + "<br>Fecha: " + fecha + "</p>";
+}
+
+window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+        <div class="boxContent">
+            <form action="#">
+                <input type="button" value="Fecha y hora de hoy" id="Ahora">
+                
+                <input type="button" value="Fecha y hora de ayer" id="Ayer">
+                
+                <input type="button" value="Fecha y hora de hace una semana" id="Semana">
+
+                <input type="button" value="Fecha y hora de hace 10 Años" id="Anios">
+            </form>
+
+            <p id="alerta"></p>
+        </div>
+</body>
+</html>

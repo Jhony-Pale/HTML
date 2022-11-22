@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Fig. 11.17. BusquedasFavoritasTwitter.html -->
+<!-- Aplicación Web de búsquedas favoritas de Twitter. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&uacute;squedas de Twitter</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <style type="text/css">
+        p{ margin: 0px; }
+        #mensajeBienvenida { margin-bottom: 10px; font-weight: bold; }
+        input[type = "text"] { width: 250px; }
+
+        /* estilos de elementos de lista */
+        span { margin-left: 10px; display: inline-block; width: 100px; }
+        li { list-style-type: none; width: 220px; }
+        li:first-child { border-top: 1px solid grey; }
+        li:nth-child(even) { background-color: lightyellow; border-bottom: 1px solid grey; }
+        li:nth-child(odd) { background-color: lightblue; border-bottom: 1px solid grey; }
+    </style>
+    <script src="BusquedasFavoritasTwitter.js"></script>
+</head>
+<body>
+    <header>
+        <a href="Fig. 11.11. FechaHora.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+    </header>
+    <h1>Búsquedas favoritas de Twitter</h1>
+    <p id="mensajeBienvenida"></p>
+    <form action="#">
+        <p>
+            <input  id="consulta" type="text" 
+            placeholder="Introduzca la consulta de búsqueda de Twitter">
+            <a href="http://dev.twitter.com/docs/using-search">
+                Operadores de búsqueda de Twitter
+            </a>
+        </p>
+        <p>
+            <input id="etiqueta" type="text" placeholder="Etiqueta su consulta">
+            <input type="button" value="Guardar" 
+                id="botonGuardar">
+            <input type="button" value="Borrar todas las búsquedas guardadas" 
+            id="botonBorrar">
+        </p>
+        </form>
+        <h1>B&uacute;squedas etiquetadas previamente</h1>
+        <div id="busquedas"></div>
+</body>
+</html>

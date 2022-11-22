@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.1.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.3</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var resultados;
+        function iniciar(){
+            resultados = document.getElementById("resultados");
+            //resultados.innerText("hola");
+            funcionesMath();
+        }
+
+        function funcionesMath(){
+            resultados.innerHTML = "abs( 7.2 ) Resultado = " + (Math.abs(7.2)) + "\n\n";
+            resultados.innerHTML += "ceil( 9.2 ) Resultado = " + (Math.ceil(9.2)) + "\n\n";
+            resultados.innerHTML += "cos( 0 ) Resultado = " + (Math.cos(0)) + "\n\n";
+            resultados.innerHTML += "exp( 1 ) Resultado = " + (Math.exp(1)) + "\n\n";
+            resultados.innerHTML += "floor( 9.2 ) Resultado = " + (Math.floor(9.2)) + "\n\n";
+            resultados.innerHTML += "log( 2.718282 ) Resultado = " + (Math.log(2.718282)) + "\n\n";
+            resultados.innerHTML += "max( 2.3, 12.7 ) Resultado = " + (Math.max(2.3, 12.7)) + "\n\n";
+            resultados.innerHTML += "min( 2.3, 12.7 ) Resultado = " + (Math.min(2.3, 12.7)) + "\n\n";
+            resultados.innerHTML += "pow( 2, 7 ) Resultado = " + (Math.pow(2, 7)) + "\n\n";
+            resultados.innerHTML += "round( 9.75 ) Resultado = " + (Math.round(9.75)) + "\n\n";
+            resultados.innerHTML += "sin( 0 ) Resultado = " + (Math.sin(0)) + "\n\n";
+            resultados.innerHTML += "sqrt( 9.0 ) Resultado = " + (Math.sqrt(900)) + "\n\n";
+            resultados.innerHTML += "tan( 0 ) Resultado = " + (Math.tan(0)) + "\n";
+            
+        }
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+<body>
+
+    <div class="boxContent">
+        <textarea id="resultados" cols="30" rows="10"></textarea>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.8.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.8</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        let primera = [ //a
+            "Nadie se atreve a salir;",
+            "Hoy que con los hombres voy,",
+            "Después de saber, lector",
+            "Nadie se atreve a salir:",
+            "Aquí la envidia y mentira"
+        ];
+        let segunda = [ //b
+            "la plebe grita indignada,",
+            "viendo a Jesús padecer,",
+            "la historia del pergamino,",
+            "la plebe grita indignada,",
+            "me tuvieron encerrado."
+        ];
+        let tercera = [ //a
+            "las damas se quieren ir",
+            "interrogándome estoy:",
+            "¿qué importa ser hombre o flor,",
+            "las damas se quieren ir",
+            "¡Dichoso el humilde estado"
+        ];
+        let cuarta = [ //b
+            "porque la fiesta empezada",
+            "¿Somos los hombres de hoy",
+            "¡ay!, si el variar de destino",
+            "porque la fiesta empezada",
+            "del sabio que se retira"
+        ];
+        let quinta = [ //a
+            "no puede ya proseguir.",
+            "aquellos niños de ayer?",
+            "sólo es variar de dolor?",
+            "no puede ya proseguir.",
+            "de aqueste mundo malvado!"
+        ];
+        let res, boton;
+
+        function iniciar(){
+            res = document.getElementById("res");
+            boton = document.getElementById("generar");
+            boton.addEventListener("click", quintilla, false);
+        }
+
+        function quintilla(){
+            let posicionPTQ = GPrimera();
+            let posicionSC = GSegunda();
+            GTercera(posicionPTQ);
+            GCuarta(posicionSC);
+            GQuinta(posicionPTQ);
+        }
+
+        function GPrimera(){
+            var posicion = Math.floor(Math.random() * 5);
+            res.innerHTML = primera[posicion] + "<br>";
+            return posicion;
+        }
+
+        function GSegunda(){
+            var posicion = Math.floor(Math.random() * 5);
+            res.innerHTML += segunda[posicion] + "<br>";
+            return posicion;
+        }
+
+        function GTercera(posicion){
+            res.innerHTML += tercera[posicion] + "<br>";
+        }
+
+        function GCuarta(posicion){
+            res.innerHTML += cuarta[posicion] + "<br>";
+        }
+
+        function GQuinta(posicion){
+            res.innerHTML += quinta[posicion] + "<br>";
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Botón para generar quintilla" id="generar">
+    <p id="res"></p>
+</body>
+</html>

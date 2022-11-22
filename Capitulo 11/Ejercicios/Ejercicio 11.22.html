@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.22.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.22</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var res, Dia, Mes, Anio, boton;
+
+        function iniciar(){
+            res = document.getElementById("res");
+            Dia = document.getElementById("Dia");
+            Mes = document.getElementById("Mes");
+            Anio = document.getElementById("Anio");
+            boton = document.getElementById("mostrar");
+            
+            fechas();
+            boton.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            if(Dia.value.length == 2 && Mes.value.length == 2 && Anio.value.length == 4){
+                if((Dia.value > 0 && Dia.value < 31) && 
+                    (Mes.value > 0 && Mes.value < 13) &&
+                    (Anio.value > 1900 && Anio.value < 2023)){
+                        fechas();
+                    }
+            }
+        }
+
+        function fechas(){
+            var fecha = new Date(), dia = Dia.value, mes = Mes.value, anio = Anio.value;
+            fecha.setDate(dia);
+            fecha.setMonth(mes - 1);
+            fecha.setFullYear(anio);
+            res.innerHTML = "Primer formato: " + fecha.toDateString() + "<br><br>";
+            res.innerHTML += "Segundo formato: " + fecha.toLocaleString() + "<br><br>";
+            res.innerHTML += "Tercer formato: " + fecha.toUTCString() + "<br><br>";
+            res.innerHTML += "Cuarto formato: " + fecha.toISOString() + "<br><br>";
+            res.innerHTML += "Quinto formato: " + fecha + "<br><br>";
+            res.innerHTML += "Sexto formato: " + fecha.toLocaleDateString('es',{ weekday:"long", year:"numeric", month:"short", day:"numeric"}) + "<br><br>";
+            
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <div class="boxContent">
+        <form action="#">
+            <input type="number" name="Dia" id="Dia" placeholder="DD">
+            <input type="number" name="Mes" id="Mes" placeholder="MM">
+            <input type="number" name="Año" id="Anio" placeholder="AAAA">
+            <input type="button" value="Mostrar formatos" id="mostrar">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+</html>

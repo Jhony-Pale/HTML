@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- Ejercicio 10.15.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10.15</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <style type="text/css">
+        td{
+            border: 1px solid black;
+        }
+        .lateral { border: 1px solid rgb(174, 248, 236); font-weight: bold; }
+    </style>
+    <script src="Ejercicio 10.15.js"></script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 10.14.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 10.16.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <p>
+            <b>
+            Posición inicial: (0,0) <br>
+            Está mirando hacia: Derecha.
+            </b>
+        </p>
+        <form action="#">
+            Pluma: <br>
+            <label>
+                <input type="radio" name="setPluma" value="1" id="pluma1" checked>
+                Arriba
+            </label>
+            <label>
+                <input type="radio" name="setPluma" value="2" id="pluma2">
+                Abajo
+            </label><br>
+            <input type="button" value="Agregar" id="agregarPluma">
+            <br><br>
+            
+            Girar: <br>
+            <label>
+                <input type="radio" name="setGiro" value="3" id="giro1" checked>
+                Derecha
+            </label>
+            <label>
+                <input type="radio" name="setGiro" value="4" id="giro2">
+                Izquierda
+            </label> <br>
+            <input type="button" value="Agregar" id="agregarGiro">
+            <br><br>
+
+            Avanzar:
+            <input type="number" name="Avanzar" id="campoAvanzar" style="width: 50px;" value="0">
+            <input type="button" value="OK" id="avanzarEspacios">
+            <br><br>
+
+            Imprimir:
+            <input type="button" value="OK" id="imprimir">
+            <br><br>
+
+            Final:
+            <input type="button" value="OK" id="final"> <br><br>
+
+            <input type="button" value="Ejecutar" id="ejecutar">
+
+            <input type="button" value="Reiniciar" id="reiniciar">
+        </form>
+
+        
+        <p id="listaComandos"></p>
+        <div style="display:flex;float:left;">
+            <p id="resultado"></p>
+        </div>
+        <span>
+            <br><br>
+            <table>
+                <tbody>
+                    <script>
+                        for(var i = 0; i < 20; i++){
+                            document.writeln("<tr><td class='lateral'>" + i + "</td></tr>");
+                        }
+                    </script>
+                </tbody>
+            </table>
+        </span>
+
+        <p id="finDibujo"></p>
+    </div>
+    <br><br>
+</body>
+</html>

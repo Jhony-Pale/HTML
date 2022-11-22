@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.20.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.20</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var Texto, Caract, Index, boton, res;
+        function iniciar(){
+            Texto = document.getElementById("Texto");
+            Caract = document.getElementById("Caract");
+            Index = document.getElementById("Index");
+            res = document.getElementById("res");
+            boton = document.getElementById("buscar");
+            boton.addEventListener("click", buscar, false);
+        }
+
+        function buscar(){
+            var caracteres = Caract.value;
+            var indice;
+            if(Index.value == '') indice = 0;
+            else{
+                indice = parseInt(Index.value);
+                if(indice < 0) indice = 0;
+            }
+            res.innerHTML = lastIndexOfPropio(caracteres, indice);
+        }
+
+        function lastIndexOfPropio(cadena, index){
+            console.log(cadena.length);
+            var texto = Texto.value, coindicencias = 0;
+            for(let c = index; c < texto.length; c++){
+                if(cadena.length == 1){
+                    if(texto[c] == cadena) return (texto.length - c);
+                    console.log("if" + c)
+                }
+                else{
+                    console.log("Else" + c)
+                    if(texto[c] == cadena[0]){
+                        coindicencias++;
+                        for(let y = 1; y < cadena.length; y++){
+                            if(texto[c + y] == cadena[y]) coindicencias++;
+                        }
+                        if(coindicencias == cadena.length){
+                            return (texto.length - c);
+                        }
+                    }
+                }
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <div class="boxContent">
+        <form action="#">
+            <input type="text" name="Texto" id="Texto" placeholder="Cadena"> <br> <br>
+            <label>
+                Usando lastIndexOf
+            </label><br>
+            <input type="text" name="Caracter" id="Caract" placeholder="Caracteres">
+            <input type="number" name="Indice" id="Index" placeholder="0" style="width: 40px;">
+            <input type="button" value="Buscar caracteres" id="buscar">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+</html>

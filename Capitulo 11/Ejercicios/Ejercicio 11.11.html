@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Ejercicio 11.11.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11.11</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        function iniciar(){
+            var boton = document.getElementById("separar");
+            var Texto = document.getElementById("Texto");
+            var res = document.getElementById("res");
+
+            boton.addEventListener("click", validar, false);
+        }
+
+        function validar(){
+            res.innerHTML = "";
+            if(!Texto.value == "")
+                separar();
+        }
+
+        function separar(){
+            var texto = Texto.value;
+            var tokens = texto.split(" ");
+            for(let p = tokens.length - 1; p >= 0; p--){
+                res.innerHTML += tokens[p] + " ";
+            }
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <div class="boxContent">
+        <form action="">	
+            <input type="text" name="Texto" id="Texto" required>
+            <input type="button" value="Separar e invertir" id="separar">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+</html>
