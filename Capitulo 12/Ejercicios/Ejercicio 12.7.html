@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- Ejercicio 12.7.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12.7</title>
+    <style type="text/css">
+        td { width: 20px; text-align: center; }
+        td:hover { cursor: pointer; }
+    </style>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var tabla;
+        var cruci = [
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0]
+        ];
+        var temp = [], celdas, clics = [];
+        function iniciar(){
+            tabla = document.getElementById("tabla");
+            reiniciar();
+
+            celdas = document.getElementsByName("celda");
+            celdas.forEach(celda =>{
+                celda.addEventListener("click", function(){
+                    mover(this);
+                });
+            });
+        }
+
+        function mover(celda){
+            var xCelda1, yCelda1, xCelda2, yCelda2, Temp1, Temp2;
+            if(clics.length <= 2){
+                clics.push(celda);
+            }
+            if(clics.length == 2){
+                if(clics[1].innerHTML == 0){
+                    for(var x in cruci){
+                        for(var y in cruci){
+                            if(cruci[x][y] == clics[0].innerHTML){
+                                xCelda1 = x;
+                                yCelda1 = y;
+                            }
+                            if(cruci[x][y] == clics[1].innerHTML){
+                                xCelda2 = x;
+                                yCelda2 = y;
+                            }
+                        }
+                    }
+                    if(adyacentes(xCelda1, yCelda1, xCelda2, yCelda2)){
+                        Temp1 = clics[1].innerHTML;
+                        Temp2 = clics[0].innerHTML;
+                        clics[0].innerHTML = Temp1;
+                        clics[1].innerHTML = Temp2;
+                        actualizarTabla(xCelda1, yCelda1, xCelda2, yCelda2);
+                    }
+                    clics.splice(1);
+                    clics.splice(0);
+                }
+                else{
+                    clics.splice(1);
+                    clics.splice(0);
+                }
+            }
+        }
+
+        function actualizarTabla(x1, y1, x2, y2){
+            var temp = cruci[x1][y1];
+            cruci[x1][y1] = cruci[x2][y2];
+            cruci[x2][y2] = temp;
+        }
+
+        function adyacentes(x1, y1, x2, y2){
+            var tempx = 0,tempy = 0;
+            tempx = parseInt(x1) - 1;
+            if(tempx == x2 && y1 == y2) return true; 
+
+            tempx = parseInt(x1) + 1;
+            if(tempx == x2 && y1 == y2) return true; 
+
+            tempy = parseInt(y1) - 1;
+            if(x1 == x2 && tempy == y2) return true; 
+
+            tempy = parseInt(y1) + 1;
+            if(x1 == x2 && tempy == y2) return true; 
+
+            return false;
+        }
+
+        function reiniciar(){
+            for(var i = 0; i < 15; i++){
+                asignarMosaicos();
+            }
+            var t = "<table border='1px'><tbody>";
+            for(var x in cruci){
+                t += "<tr>";
+                for(var y in cruci[x]){
+                    if(cruci[x][y] != 0)
+                        t += "<td name='celda' value='" + cruci[x][y]+ "'>" + cruci[x][y] + "</td>";
+                    else
+                        t += "<td name='celda' value='" + cruci[x][y]+ "'> </td>";
+                }
+                t += "</tr>";
+            }
+            t += "</tbody></table>";
+            tabla.innerHTML = t;
+        }
+
+        function asignarMosaicos(){
+            var numero = Math.floor(1 + Math.random() * 15);
+            while(temp.includes(numero)){
+                numero = Math.floor(1 + Math.random() * 15);
+            }
+            temp.push(numero);
+            var posicionX = Math.floor(Math.random() * 4);
+            var posicionY = Math.floor(Math.random() * 4);
+            while(cruci[posicionX][posicionY] != 0){
+                posicionX = Math.floor(Math.random() * 4);
+                posicionY = Math.floor(Math.random() * 4);
+            }
+            cruci[posicionX][posicionY] = numero;
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 12.6.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 12.8.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <p>
+        Juego del 15.
+    </p>
+    <div class="boxContent">
+        <div id="tabla"></div><br>
+        <p id="mensajes"></p>
+    </div>
+</body>
+</html>

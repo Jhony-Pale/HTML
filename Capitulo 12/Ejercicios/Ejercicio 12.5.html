@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Ejercicio 12.5.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12.5</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var contador = 0;
+        function iniciar(){
+            document.getElementById("incrementar").addEventListener("click", function(){
+                document.getElementById("contador").innerHTML = contador++;
+            });
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 12.4.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 12.6.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <p>Presione el siguiente botón para incrementar el contador:</p>
+    <div class="boxContent">
+        <button id="incrementar">Incrementar</button><br><br>
+        <div id="contador"></div>
+    </div>
+</body>
+</html>

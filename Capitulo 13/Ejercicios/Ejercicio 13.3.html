@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Ejercicio 13.3.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13.3</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <style type="text/css">
+        .blue { background-color: blue; }
+        .red { background-color: red; }
+        .white { background-color: white; }
+        table { border: 1px solid black; background-color: white; }
+    </style>
+    <script>
+        function crearLienzo(){
+            var lado = 100;
+            var tbody = document.getElementById("cuerpotabla");
+
+            for(var i = 0; i < lado; ++i){
+                var fila = document.createElement("tr");
+                for(var j = 0; j < lado; ++j){
+                    var celda = document.createElement("td");
+                    fila.appendChild(celda);
+                }
+
+                tbody.appendChild(fila);
+            }
+
+            document.getElementById("lienzo").addEventListener("mousemove", procesarMouseMove, false);
+        }
+
+        function procesarMouseMove(e){
+            if( e.target.tagName.toLowerCase() == "td" ){
+                if(e.ctrlKey){
+                    e.target.setAttribute("class", "blue");
+                }
+
+                if(e.shiftKey){
+                    e.target.setAttribute("class", "red");
+                }
+
+                if(e.altKey)    {
+                    e.target.setAttribute("class", "white");
+                }
+            }
+        }
+
+        window.addEventListener("load", crearLienzo, false);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 13.2.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 13.4.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <table id="lienzo">
+            <caption>
+                Mantenga presionada <em>Ctrl</em> (o <em>Control</em>) para dibujar en azul. Mantenga presionada <em>Mayús</em> para dibujar en rojo. Mantenga presionada <em>Alt</em> para borrar.
+            </caption>
+            <tbody id="cuerpotabla"></tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Ejercicio 13.5.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13.5</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        function inicio(){
+            var caracter = /&/g; 
+            document.getElementById("comentarios").addEventListener("blur",
+                function(){
+                    this.value = this.value.replace(caracter, " y ");
+                },false);
+        }
+
+        window.addEventListener("load", inicio, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 13.4.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 13.6.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <form action="#">
+            <label for="comentarios">
+                Aquí puede escribir lo que desee...
+            </label><br>
+            <textarea id="comentarios"></textarea>
+        </form>
+    </div>
+</body>
+</html>
