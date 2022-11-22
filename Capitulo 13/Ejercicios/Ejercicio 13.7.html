@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Ejercicio 13.7.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13.7</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        var imagen;
+        function inicio(){
+            imagen = document.getElementById("avion");
+            imagen.addEventListener("mousedown", moverAvion, false);
+            //evitar el error de arrastrar imagen
+            document.addEventListener('dragstart', function(evt) {
+                if (evt.target.tagName == 'IMG') {
+                evt.preventDefault();
+                }
+            });
+        }
+
+        function moverAvion(e){
+            imagen.style.left = e.clientX - 80 + "px";
+            imagen.style.top = e.clientY - 80 + "px";
+            imagen.addEventListener("mousemove", moverAvion, false);
+            imagen.addEventListener("click", detener, false);
+        }
+
+        function detener(){
+            imagen.removeEventListener("mousemove", moverAvion, false);
+        }
+
+        window.addEventListener("load", inicio, false);
+    </script>
+
+    <style type="text/css">
+        img { position: absolute; }
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 13.6.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 13.8.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <img src="GPP.png" alt="Imagen" width="150px" id="avion">
+</body>
+</html>

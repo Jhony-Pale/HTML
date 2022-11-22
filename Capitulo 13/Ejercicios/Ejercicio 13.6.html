@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Ejercicio 13.6.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13.6</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+
+    <script>
+        function clicDocumento(e){
+            if(e.ctrlKey){
+                alert("(Tecla Ctrl) Hizo clic en un elemento: " + e.target.tagName);
+            }
+            if(e.shiftKey){
+                alert("(Tecla Mayús) Hizo clic y el nombre del evento es: " + e.type);
+            }
+        }
+
+        function inicio(){
+            document.addEventListener("click", clicDocumento, false);
+        }
+
+        window.addEventListener("load", inicio, false);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 13.5.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 13.7.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <p>
+        Presione la letra Ctrl o Mayús + Clic.
+    </p>
+</body>
+</html>

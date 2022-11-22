@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Fig. 13.8. focusblur.html -->
+<!-- Demostración de los eventos focus y blur. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un formulario que utiliza focus y blur</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+
+    <script src="focusblur.js"></script>
+
+    <style type="text/css">
+        textarea { width: 300px; height: 100px; }
+        label.fixed { width: 4em; float: left; } 
+        #textoAyuda { font-family: sans-serif; color: blue; margin-top: 10px; }
+        p { margin: 0; margin-top: 3px; }
+    </style>
+
+</head>
+<body>
+    <br><br>
+    <form action="#" id="miFormulario">
+        <p>
+            <label for="nombre" class="fixed">Nombre:</label>
+            <input type="text" placeholder="Escriba su nombre" id="nombre">
+        </p>
+        <p>
+            <label for="email" class="fixed">E-mail:</label>
+            <input type="email" placeholder="Escriba su e-mail" id="email">
+        </p>
+        <p>
+            <label>
+                Haga clic aquí si le gusta este sitio
+                <input type="checkbox" id="gusta">
+            </label>
+        </p>
+        <p>
+            <label for="comentarios">¿Comentarios?</label>
+        </p>
+        <textarea placeholder="Escriba aqui sus comentarios" id="comentarios"></textarea>
+        <p>
+            <input type="submit" id="enviar">
+            <input type="reset" id="reiniciar">
+        </p>
+    </form>
+    <p id="textoAyuda"></p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Ejercicio 13.8.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13.8</title>
+
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+
+    <script>
+        var imagenes, imagenActual;
+        function inicio(){
+            imagenes = document.getElementsByName("prueba");
+
+            imagenes.forEach(imagen =>{
+                imagen.addEventListener("mousedown", 
+                    function(e){
+                        imagenActual = this;
+                        moverprueba(e);
+                    }, false);
+            });
+
+            document.addEventListener('dragstart', function(evt) {
+                if (evt.target.tagName == 'IMG') {
+                evt.preventDefault();
+                }
+            });
+        }
+
+
+        function moverprueba(e){
+            imagenActual.style.left = e.clientX - 80 + "px";
+            imagenActual.style.top = e.clientY - 80 + "px";
+            imagenActual.addEventListener("mousemove", moverprueba, false);
+            imagenActual.addEventListener("click", detener, false);
+        }
+
+        function detener(){
+            imagenActual.removeEventListener("mousemove", moverprueba, false);
+        }
+
+        window.addEventListener("load", inicio, false);
+    </script>
+
+    <style type="text/css">
+        img { position: absolute; }
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 13.7.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+    </header>
+    <div class="boxContent">
+        <p>Nota: las 3 imágenes están sobrepuestas.</p>
+    </div>
+    <img src="prueba.png" alt="prueba" width="150px" name="prueba">
+    <img src="prueba.png" alt="prueba" width="150px" name="prueba">
+    <img src="prueba.png" alt="prueba" width="150px" name="prueba">
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Ejercicio 12.6.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12.6</title>
+    <link rel="stylesheet" href="estilo.css" type="text/css">
+    <script>
+        function iniciar(){
+            document.getElementById("modificar").addEventListener("click", modificar);
+        }
+
+        function modificar(){
+            var letra = document.getElementsByName("Tipografia");
+            var body = document.body;
+            var color = document.getElementById("colorFondo").value;
+            body.style.background = color;
+            for(var opc in letra){
+                if(letra[opc].checked){
+                    body.style.fontFamily = letra[opc].value;
+                }
+            }
+        }
+
+        window.addEventListener("load", iniciar);
+    </script>
+
+</head>
+<body>
+    <header>
+        <a href="Ejercicio 12.5.html"><button type="submit">Regresar</button></a>
+        <a href="../../index.html"><input type="button" value="Menú principal"></a>
+        <a href="Ejercicio 12.7.html"><button type="submit">Siguiente</button></a>
+    </header>
+    <div class="boxContent">
+        <form action="#">
+            <label>
+                Escoja un color de fondo: 
+                <input type="color" name="Color fondo" id="colorFondo">
+            </label><br>
+            Escoja un tipo de letra: <br>
+            <label>
+                <input type="radio" name="Tipografia" value="serif" checked>
+                Serif
+            </label><br>
+            <label>
+                <input type="radio" name="Tipografia" value="sans-serif">
+                Sans serif
+            </label> <br><br>
+            <input type="button" value="Modificar esta página" id="modificar">
+        </form>
+    </div>
+</body>
+</html>
